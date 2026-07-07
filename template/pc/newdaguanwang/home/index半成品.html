@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+    <title>{$meta_title}</title>
+    <meta content="{$meta_keywords}" name="keywords"></meta>
+    <meta content="{$meta_description}" name="description"></meta>
+    <link href="{THEME_PATH}assets/newdaguanwang/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="{THEME_PATH}assets/newdaguanwang/css/swiper.min.css" rel="stylesheet" type="text/css" />
+    <link href="{THEME_PATH}assets/newdaguanwang/css/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="{THEME_PATH}assets/newdaguanwang/css/animate.min.css" rel="stylesheet" type="text/css" />
+    <link href="{THEME_PATH}assets/newdaguanwang/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="{THEME_PATH}assets/newdaguanwang/css/fullpage.css" rel="stylesheet" type="text/css" />
+    <script src="{THEME_PATH}assets/newdaguanwang/js/jquery.1.8.2.min.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/swiper.min.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/index.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/swiper-bundle.min.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/swiper.animate.min.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/wow.min.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/html5zoo.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/lovelygallery.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/jquery.lazyload.min.js" type="text/javascript"></script>
+    <script src="{THEME_PATH}assets/newdaguanwang/js/fullpage.js" type="text/javascript"></script>
+    <script>
+                            
+                // (function (doc, win) {
+                //     var docEl = doc.documentElement,
+                //         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                //         recalc = function () {
+                //             var clientWidth = docEl.clientWidth;
+                //             if (!clientWidth) return;
+                //             if (clientWidth >= 640) {
+                //                 docEl.style.fontSize = '100px';
+                //             } else {
+                //                 docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                //             }
+                //         };
+        
+                //     if (!doc.addEventListener) return;
+                //     win.addEventListener(resizeEvt, recalc, false);
+                //     doc.addEventListener('DOMContentLoaded', recalc, false);
+                // })(document, window);
+                
+                
+                
+                                
+    </script>
+    
+    
+    <script>
+    
+        // 在HTML开始处添加立即执行的rem计算
+        
+        (function() {
+            function updateRem() {
+                var docEl = document.documentElement;
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if (clientWidth >= 640) {
+                    docEl.style.fontSize = '100px';
+                } else {
+                    docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                }
+            }
+            
+            // 立即执行一次
+            updateRem();
+            
+            // DOMContentLoaded时再次执行
+            document.addEventListener('DOMContentLoaded', updateRem);
+            
+            // 窗口大小改变时执行
+            window.addEventListener('resize', updateRem);
+        })();
+        
+    </script>
+    
+    
+    
+    
+
+    
+</head>
+
+
+<body>
+
+
+    <div class="m_container m_body_hidden">
+        <div style="0.67rem">
+        </div>
+        <div class="m_header m_body_hidden">
+            <div class="m_header_center">
+                <div class="m_header_logo">
+                    <a href="/" style="display: block;text-decoration: none;" target="_blank">
+                        <img alt="" src="{THEME_PATH}assets/newdaguanwang/images/index/m_header_logo.png" />
+                    </a>
+                </div>
+                <div class="m_header_tel">
+                    <div class="m_header_tel_image">
+                        <img alt="" src="{THEME_PATH}assets/newdaguanwang/images/index/m_header_tel.png" />
+                    </div>
+                    <div class="m_header_tel_image_font">
+                        <h3>全国咨询热线</h3>
+                        <a href="tel:13837103643" style="display: block;text-decoration: none;" target="_blank">
+                            <h4 style="margin-top: -0.06rem;
+    display: block;">138-3710-3643</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="m_header_nav">
+                    <img alt="" src="{THEME_PATH}assets/newdaguanwang/images/index/m_header_nav.png" />
+                </div>
+            </div>
+        </div>
+
+
+
+        {template "m_nav.html"}
+
+
+
+
+        <div class="m_banner">
+            <div class="m_banner_center">
+                <!-- Swiper -->
+                <div class="m_swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.zzyugong.cn/yingjiremai.html" target="_blank">
+                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/m_banner99.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img>
+                            </a>
+                        </div>
+
+
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-366.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner9.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-367.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner10.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-371.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner11.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-280.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner12.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-372.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner13.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-369.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner14.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+
+
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-286.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner2.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-329.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner3.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-293.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner4.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-283.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner5.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-311.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner6.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-322.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner7.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                        <div class="swiper-slide red-slide">
+                            <a href="https://www.hnyugong.com/show-299.html" target="_blank">
+                                <img class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_banner8.jpg"
+                                    style="width:6.4rem;height:7.44rem;">
+                                </img></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m_buttom_nav" style="margin-top:2.15rem !important">
+            <div class="m_buttom_nav_center">
+                <ul>
+                    <li>
+                        <a href="{dr_share_cat_value(11, 'url')}" target="_blank">
+                            <div>
+                                <h3>
+                                    路面施工
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{dr_share_cat_value(13, 'url')}" target="_blank">
+                            <div>
+                                <h3>
+                                    环保系列
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{dr_share_cat_value(14, 'url')}" target="_blank">
+                            <div>
+                                <h3 style="width: 0.7rem;">
+                                    桥梁<br />
+                                    预应力
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{dr_share_cat_value(15, 'url')}" target="_blank">
+                            <div>
+                                <h3>
+                                    隧道喷浆
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{dr_share_cat_value(16, 'url')}" target="_blank">
+                            <div>
+                                <h3>
+                                    注浆泵类
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{dr_share_cat_value(17, 'url')}" target="_blank">
+                            <div>
+                                <h3>
+                                    钢筋钢管
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{dr_share_cat_value(18, 'url')}" target="_blank">
+                            <div>
+                                <h3>
+                                    切割破拆
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{dr_share_cat_value(19, 'url')}" target="_blank">
+                            <div>
+                                <h3>
+                                    工程钻机
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="m_news_infor">
+            <div class="m_news_infor_center">
+                <div class="m_news_infor_title">
+                    <div>
+                        <h3>豫工动态</h3>
+                    </div>
+                    <div>
+                        <a href="{dr_share_cat_value(8, 'url')}" style="display: block;text-decoration: none;"
+                            target="_blank">
+                            <h3>更多</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="m_news_infor_trumpet">
+                    <div class="m_news_infor_trumpet_block">
+                        <img alt="" class="lazy"
+                            data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_trumpet.png" />
+                    </div>
+                </div>
+                <div class="m_news_infor_middle">
+                    <div class="m_swiper-container2">
+                        <div class="swiper-wrapper">
+
+
+                            {module module=xinwenguanli catid=8 num=3 order=updatetime}
+
+
+                            <div class="swiper-slide">
+                                <a href="{$t['url']}" target="_blank">
+                                    <img class="" src="{dr_thumb($t['thumb'], 328, 143 ,0, 'crop')}">
+                                    </img></a>
+                            </div>
+
+
+                            {/module}
+
+
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="m_news_infor_bottom">
+                    <ul>
+                        <li class="m_news_infor_bottom_li1">
+                            <div class="m_news_infor_bottom_li1_image">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_heart.png" />
+                            </div>
+                            <div class="m_news_infor_bottom_li1_font">
+                                <h3>145</h3>
+                            </div>
+                            <div class="m_news_infor_bottom_li1_line">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_news_line.jpg" />
+                            </div>
+                        </li>
+                        <li class="m_news_infor_bottom_li2">
+                            <div class="m_news_infor_bottom_li2_image">
+                                <a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573"
+                                    style="display: block;text-decoration: none;" target="_blank">
+                                    <img alt="" class="lazy"
+                                        data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_message.png" />
+                                </a>
+                            </div>
+                            <div class="m_news_infor_bottom_li2_font">
+                                <h3>200</h3>
+                            </div>
+                            <div class="m_news_infor_bottom_li2_line">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_news_line.jpg" />
+                            </div>
+                        </li>
+                        <li class="m_news_infor_bottom_li3">
+                            <div class="m_news_infor_bottom_li3_image">
+                                <a href="tel:13837103643"
+                                    style="display: block;text-decoration: none;    margin-top: -0.05rem;"
+                                    target="_blank">
+                                    <img alt="" class="lazy"
+                                        data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_star.png" />
+                                </a>
+                            </div>
+                            <div class="m_news_infor_bottom_li3_font">
+                                <h3>123</h3>
+                            </div>
+                            <div class="m_news_infor_bottom_li3_line">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_news_line.jpg" />
+                            </div>
+                        </li>
+                        <li class="m_news_infor_bottom_li4">
+                            <div class="m_news_infor_bottom_li4_image">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_share.png" />
+                            </div>
+                            <div class="m_news_infor_bottom_li4_font">
+                                <h3>321</h3>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="m_share" style="float: right;display: none;">
+                    <div class="bshare-custom">
+                        <div class="bsPromo bsPromo2"></div><a class="bshare-weixin" title="分享到微信"></a><a
+                            class="bshare-qqim" title="分享到QQ好友"></a><a class="bshare-sinaminiblog"
+                            title="分享到新浪微博"></a><a class="bshare-more bshare-more-icon more-style-addthis"
+                            title="更多平台"></a>
+                    </div>
+                    <script charset="utf-8"
+                        src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=1&amp;lang=zh"
+                        type="text/javascript"></script>
+                    <script charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js" type="text/javascript"></script>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(".m_news_infor_bottom_li4_image").click(function () {
+
+                $(".m_share").show();
+
+            });
+
+
+            //点击除按钮和div弹框之外任意地方时，隐藏弹框
+            $("body").click(function (e) {
+
+                if (!$(e.target).closest(".m_news_infor_bottom_li4_image,.m_share").length) {
+                    $(".m_share").hide();
+                }
+
+            });
+        </script>
+        <div class="m_split"></div>
+        <div class="m_product">
+            <div class="m_product_center">
+                <div class="m_product_title">
+                    <div class="m_product_title_left">
+                        <div class="m_product_title_left_image">
+                            <img alt="" class="lazy"
+                                data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_product_hot.png" />
+                        </div>
+                        <div class="m_product_title_left_font">
+                            <h3>人气设备</h3>
+                        </div>
+                    </div>
+                    <a href="{dr_share_cat_value(12, 'url')}" style="display: block;text-decoration: none;"
+                        target="_blank">
+                        <div class="m_product_title_right">
+                            <h4>更多</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="m_product_content">
+                    <div class="m_swiper-container3">
+                        <div class="swiper-wrapper">
+
+
+                            {module module=chanpinguanli catid=12 order=updatetime num=3 flag=1}
+
+
+
+                            <div class="swiper-slide">
+                                <a href="{$t['url']}" target="_blank">
+                                    <img class="" src="{dr_thumb($t['thumb'], 355, 200, 0, 'crop')}"
+                                        style="width:100%;height:100%;">
+                                    </img></a>
+                            </div>
+
+
+                            {/module}
+
+
+
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <div class="m_product_bottom">
+                    <div class="m_product_bottom_block">
+                        <img alt="" class="lazy"
+                            data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_product_cover.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m_series">
+            <div class="m_series_center">
+                <div class="m_series_title">
+                    <div class="m_swiper-container4">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide active_blue">
+                                <div class="swiper_slide_block">
+                                    <h3>#路面施工</h3>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <h3>#环保系列</h3>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <h3>#桥梁预应力</h3>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <h3>#隧道喷浆支护</h3>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <h3>#钢筋钢管</h3>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <h3>#注浆泵类</h3>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <h3>#切割破拆</h3>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <h3>#工程钻机</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m_series_content swiper-no-swiping">
+                    <div class="m_swiper-container5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-283.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_lumian_01.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-282.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_lumian_02.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-332.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_lumian_03.png" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-284.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_lumian_04.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-293.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_huanbao_01.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-286.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_huanbao_02.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-296.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_huanbao_03.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-292.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_huanbao_04.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-299.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_qiaoliang_01.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-298.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_qiaoliang_02.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-297.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_qiaoliang_03.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-303.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_qiaoliang_04.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-306.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_suidao_01.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-308.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_suidao_02.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-310.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_suidao_03.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-311.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_suidao_04.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-318.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_gangjin_01.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-319.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_gangjin_02.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-317.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_gangjin_03.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-320.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_gangjin_04.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-314.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_zhujiang_01.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-313.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_zhujiang_02.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-316.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_zhujiang_03.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-315.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_zhujiang_04.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-321.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_qiege_01.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-322.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_qiege_02.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-323.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_qiege_03.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-325.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_qiege_04.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper_slide_block">
+                                    <ul>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-330.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_zuanji_01.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-327.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_zuanji_02.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-328.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_zuanji_03.jpg" />
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://www.zzyugong.cn/show-329.html"
+                                                style="display: block;text-decoration: none;" target="_blank">
+                                                <img alt="" class="lazy"
+                                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_zuanji_04.jpg" />
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m_split"></div>
+        <div class="m_case">
+            <div class="m_case_center">
+                <div class="m_product_title">
+                    <div class="m_product_title_left">
+                        <div class="m_product_title_left_image">
+                            <img alt="" class="lazy"
+                                data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_case_diamond.png" />
+                        </div>
+                        <div class="m_product_title_left_font">
+                            <h3>客户案例</h3>
+                        </div>
+                    </div>
+                    <a href="{dr_share_cat_value(10, 'url')}" style="display: block;text-decoration: none;"
+                        target="_blank">
+                        <div class="m_product_title_right">
+                            <h4>更多</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="m_case_content">
+                    <ul>
+
+
+
+                        {module module=anliguanli catid=10 num=3 order=updatetime}
+
+
+                        <li>
+                            <a href="{$t['url']}" style="display: block;text-decoration: none;" target="_blank">
+                                <div class="m_case_content_li_img">
+                                    <img alt="" class="" src="{dr_thumb($t['thumb'], 135, 80 ,0, 'crop')}" />
+                                </div>
+                                <div class="m_case_content_li_font">
+                                    <div>
+                                        <h3>
+                                            {$t['title']}
+                                        </h3>
+                                    </div>
+                                    <div>
+                                        <h5>{dr_strcut($t['description'], 10, '')} </h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+
+
+
+                        {/module}
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="m_split"></div>
+        <div class="m_about">
+            <div class="m_about_center">
+                <div class="m_product_title">
+                    <div class="m_product_title_left">
+                        <div class="m_product_title_left_image">
+                            <img alt="" class="lazy"
+                                data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_about_icon.png" />
+                        </div>
+                        <div class="m_product_title_left_font">
+                            <h3>关于豫工</h3>
+                        </div>
+                    </div>
+                    <a href="#" style="display: block;text-decoration: none;" target="_blank">
+                        <div class="m_product_title_right" style="background: none;">
+                            <h4></h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="m_about_content">
+                    <div class="m_about_content_p">
+                        <p>
+                            公司历经19年高速发展，技术力量雄厚，加工设备齐全，检测手
+                            段完备，拥有8大产品系列，100多款产品，涉及领域包括桥梁隧
+                            道、高速公路、轻轨高铁、矿山开采等行业。历经千百次改进，
+                            品质稳定，可靠性高。
+                        </p>
+                    </div>
+                    <div class="m_about_content_img">
+                        <img alt="" class="lazy"
+                            data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_about_image.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="m_honor">
+            <div class="m_honor_center">
+                <div class="m_product_title">
+                    <div class="m_product_title_left">
+                        <div class="m_product_title_left_image">
+                            <img alt="" class="lazy"
+                                data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_honor_icon.png" />
+                        </div>
+                        <div class="m_product_title_left_font">
+                            <h3>荣誉证书</h3>
+                        </div>
+                    </div>
+                    <a href="#" style="display: block;text-decoration: none;" target="_blank">
+                        <div class="m_product_title_right" style="background: none;">
+                            <h4></h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="m_honor_content">
+                    <ul>
+                        <li>
+                            <img alt="" class="lazy"
+                                data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_honor_image_01.jpg" />
+                        </li>
+                        <li>
+                            <img alt="" class="lazy"
+                                data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_honor_image_02.jpg" />
+                        </li>
+                        <li>
+                            <img alt="" class="lazy"
+                                data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_honor_image_03.jpg" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="m_split"></div>
+        <div class="m_expert">
+            <div class="m_expert_center">
+                <div class="m_expert_title">
+                    <h2>豫工机械</h2>
+                    <h3>一站式\专业化\专家级服务</h3>
+                </div>
+                <div class="m_expert_content">
+                    <ul>
+                        <li>
+                            <div class="m_expert_content_li_img">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_expert_image_01.png" />
+                            </div>
+                            <div class="m_expert_content_li_h6">
+                                <h6>
+                                    规模大<br />
+                                    品种繁多
+                                </h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m_expert_content_li_img">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_expert_image_02.png" />
+                            </div>
+                            <div class="m_expert_content_li_h6">
+                                <h6>
+                                    志存高远<br />
+                                    勇于超越
+                                </h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m_expert_content_li_img">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_expert_image_03.png" />
+                            </div>
+                            <div class="m_expert_content_li_h6">
+                                <h6>
+                                    守时有志<br />
+                                    值得信赖
+                                </h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m_expert_content_li_img">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_expert_image_04.png" />
+                            </div>
+                            <div class="m_expert_content_li_h6">
+                                <h6>
+                                    专业认证<br />
+                                    品质保障
+                                </h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="m_expert_content_li_img">
+                                <img alt="" class="lazy"
+                                    data-original="{THEME_PATH}assets/newdaguanwang/images/index/m_expert_image_05.png" />
+                            </div>
+                            <div class="m_expert_content_li_h6">
+                                <h6>
+                                    以质为本<br>
+                                    精品制造
+                                    </br></h6>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="m_consult">
+            <div class="m_consult_center">
+                <div class="m_consult_left">
+                    <a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573"
+                        style="display: block;text-decoration: none;" target="_blank">
+                        <div class="m_consult_left_img">
+                            <img alt="" class="lazy"
+                                src="{THEME_PATH}assets/newdaguanwang/images/index/m_consult_icon_02.png" />
+                        </div>
+                        <div class="m_consult_left_h3">
+                            <h3>设备咨询</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="m_consult_middle">
+                    <a href="tel:13837103643" style="display: block;text-decoration: none;" target="_blank">
+                        <div class="m_consult_middle_img">
+                            <img alt="" class="lazy"
+                                src="{THEME_PATH}assets/newdaguanwang/images/index/m_consult_icon_01.png" />
+                        </div>
+                    </a>
+                </div>
+                <div class="m_consult_right">
+                    <a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573"
+                        style="display: block;text-decoration: none;" target="_blank">
+                        <div class="m_consult_right_img">
+                            <img alt="" class="lazy"
+                                src="{THEME_PATH}assets/newdaguanwang/images/index/m_consult_icon_03.png" />
+                        </div>
+                        <div class="m_consult_right_h3">
+                            <h3>在线咨询</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="m_back" style="display: none;">
+            <div class="m_back_center">
+                <div class="m_back_block">
+                    <img alt="" class="lazy" src="{THEME_PATH}assets/newdaguanwang/images/index/m_back_image.png" />
+                </div>
+            </div>
+        </div>
+        <div class="m_seat" style="height: 0.68rem;">
+            <div class="m_seat_center">
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var m_swiper = new Swiper('.m_swiper-container', {
+            effect: 'fade',
+            autoplay: false,
+            pagination: {
+                el: '.m_swiper-container .swiper-pagination',
+                clickable: true
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+
+        var m_swiper2 = new Swiper('.m_swiper-container2', {
+            pagination: {
+                el: '.m_swiper-container2 .swiper-pagination',
+                clickable: true
+            }
+        });
+
+        var m_swiper3 = new Swiper('.m_swiper-container3', {
+            autoplay: true,
+            pagination: {
+                el: '.m_swiper-container3 .swiper-pagination',
+                clickable: true
+            }
+        });
+
+
+
+        var m_swiper5 = new Swiper('.m_swiper-container5', {
+            spaceBetween: 30,
+            pagination: {
+                el: '.m_swiper-container5 .swiper-pagination',
+                clickable: true
+            },
+            on: {
+                slideChangeTransitionStart: function () {
+                    let i = this.activeIndex;
+                    $('.m_swiper-container4 ul').find('li').eq(i).addClass('active_blue').siblings('li')
+                        .removeClass('active_blue');
+                }
+            }
+        });
+
+
+        var m_swiper4 = new Swiper('.m_swiper-container4', {
+            slidesPerView: 4,
+            freeMode: true,
+            pagination: {
+                el: '.m_swiper-container4 .swiper-pagination',
+                clickable: true
+            },
+        });
+
+
+
+        $('.m_swiper-container4 .swiper-slide').click(function () {
+            var index = $(this).index();
+            $(this).addClass('active_blue').siblings('.swiper-slide').removeClass('active_blue');
+            m_swiper5.slideTo(index);
+
+        });
+    </script>
+    <script>
+        $(".m_news_infor_bottom_li1_image").click(function () {
+
+
+
+            if ($(".m_news_infor_bottom_li1_image img").attr("src") == "{THEME_PATH}assets/newdaguanwang/images/index/m_heart.png") {
+
+                $(".m_news_infor_bottom_li1_image img").attr("src", "{THEME_PATH}assets/newdaguanwang/images/index/m_heart_red.png");
+
+                var num = 0;
+
+                num = $(".m_news_infor_bottom_li1_font h3").text();
+
+                num = Number(num) + 1;
+
+                $(".m_news_infor_bottom_li1_font h3").text(num);
+
+            } else {
+
+                $(".m_news_infor_bottom_li1_image img").attr("src", "{THEME_PATH}assets/newdaguanwang/images/index/m_heart.png");
+
+                var num = 0;
+
+                num = $(".m_news_infor_bottom_li1_font h3").text();
+
+                num = Number(num) - 1;
+
+                $(".m_news_infor_bottom_li1_font h3").text(num);
+            }
+
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+    </script>
+    <script>
+
+
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= 300) {
+                    $('.m_back').fadeIn(600);
+                } else {
+                    $('.m_back').fadeOut(600);
+                }
+            });
+
+            $('.m_back_block').click(function () {
+                $("html,body").animate({
+                    scrollTop: 0
+                }, 500);
+            });
+
+        });
+    </script>
+    <script>
+    </script>
+    <script>
+        $(function () {
+            $("img").lazyload();
+        });
+    </script>
+    <script>
+        $("img").lazyload({
+            threshold: 10000
+        });
+    </script>
+    <script>
+        function ddd(obj, sType) {
+            var oDiv = document.getElementById(obj);
+            if (sType == 'show') { oDiv.style.display = 'block'; }
+            if (sType == 'hide') { oDiv.style.display = 'none'; }
+        }
+    </script>
+    <script>
+        function fff(obj, sType) {
+            var oDiv = document.getElementById(obj);
+            if (sType == 'show') { oDiv.style.display = 'block'; }
+            if (sType == 'hide') { oDiv.style.display = 'none'; }
+        }
+    </script>
+    
+    
+    
+    
+
+    
+    
+</body>
+
+</html>

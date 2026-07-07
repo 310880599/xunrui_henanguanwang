@@ -1,0 +1,3316 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>{$meta_title}</title>
+	<meta name="keywords" content="{$meta_keywords}" />
+	<meta name="description" content="{$meta_description}" />
+    <link rel="stylesheet" type="text/css" href="{THEME_PATH}assets/newdaguanwang/css/video_article.css">
+	<link rel="stylesheet" type="text/css" href="{THEME_PATH}assets/newdaguanwang/css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="{THEME_PATH}assets/newdaguanwang/css/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="{THEME_PATH}assets/newdaguanwang/css/common.css">
+	<link rel="stylesheet" type="text/css" href="{THEME_PATH}assets/newdaguanwang/css/together.css">	
+	<script type="text/javascript" src="{THEME_PATH}assets/newdaguanwang/js/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="{THEME_PATH}assets/newdaguanwang/js/swiper.min.js"></script>
+	<script type="text/javascript" src="{THEME_PATH}assets/newdaguanwang/js/index.js"></script>
+	<script type="text/javascript" src="{THEME_PATH}assets/newdaguanwang/js/swiper-bundle.min.js"></script>
+	<script type="text/javascript" src="{THEME_PATH}assets/newdaguanwang/layer/layer.js"></script>
+    <script>
+    
+    
+            function browserRedirect() {
+                
+                var sUserAgent = navigator.userAgent.toLowerCase();
+                
+                var isMobile = /mobile|android|iphone|ipad|ipod|blackberry|iemobile|opera mini|windows phone/i.test(sUserAgent);
+        
+                if (isMobile) {
+                    // 移动端代码
+                    //console.log("移动设备");
+
+                                                
+                            // 在HTML开始处添加立即执行的rem计算
+                            
+                            (function() {
+                                function updateRem() {
+                                    var docEl = document.documentElement;
+                                    var clientWidth = docEl.clientWidth;
+                                    if (!clientWidth) return;
+                                    if (clientWidth >= 640) {
+                                        docEl.style.fontSize = '100px';
+                                    } else {
+                                        docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                                    }
+                                }
+                                
+                                // 立即执行一次
+                                updateRem();
+                                
+                                // DOMContentLoaded时再次执行
+                                document.addEventListener('DOMContentLoaded', updateRem);
+                                
+                                // 窗口大小改变时执行
+                                window.addEventListener('resize', updateRem);
+                            })();
+                            
+                            
+                                
+                    
+                } else {
+                    // PC端代码
+                    // 您的PC端代码
+                    
+                                
+                    
+
+                                                    			
+                                // PC端rem计算，立即执行
+                                (function() {
+                                    function updateRem() {
+                                        var designSize = 1920; // 设计图尺寸
+                                        var docEl = document.documentElement;
+                                        var clientWidth = docEl.clientWidth; // 窗口宽度
+                                        if (!clientWidth) return;
+                                        var rem = clientWidth * 100 / designSize;
+                                        docEl.style.fontSize = rem + 'px';
+                                    }
+                                    
+                                    // 立即执行一次
+                                    updateRem();
+                                    
+                                    // DOMContentLoaded时再次执行
+                                    document.addEventListener('DOMContentLoaded', updateRem);
+                                    
+                                    // 窗口大小改变时执行，添加防抖
+                                    var tid;
+                                    window.addEventListener('resize', function() {
+                                        clearTimeout(tid);
+                                        tid = setTimeout(updateRem, 1);
+                                    }, false);
+                                    
+                                    // 处理从缓存恢复页面的情况
+                                    window.addEventListener('pageshow', function(e) {
+                                        if (e.persisted) {
+                                            clearTimeout(tid);
+                                            tid = setTimeout(updateRem, 1);
+                                        }
+                                    }, false);
+                                })();
+
+                    
+                    
+                    
+                }
+            }
+            
+            browserRedirect();
+        
+        
+    </script>
+  </head>
+  <script>
+    (function(b,a,e,h,f,c,g,s){b[h]=b[h]||function(){(b[h].c=b[h].c||[]).push(arguments)};
+    b[h].s=!!c;g=a.getElementsByTagName(e)[0];s=a.createElement(e);
+    s.src="//s.union.360.cn/"+f+".js";s.defer=!0;s.async=!0;g.parentNode.insertBefore(s,g)
+    })(window,document,"script","_qha",464108,false);
+</script>
+  <body>
+
+	<div class="container  body_hidden">
+		
+		<script type="text/javascript">
+    if(!window._pt_sp_2){
+        window._pt_lt = new Date().getTime();
+        window._pt_sp_2 = [];
+        _pt_sp_2.push("setAccount,42271aa4");
+        var _protocol =(("https:" == document.location.protocol) ? " https://" : " http://");
+        (function() {
+            var atag = document.createElement("script");
+            atag.type = "text/javascript";
+            atag.async = true;
+            atag.src = _protocol + "js.ptengine.cn/42271aa4.js";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(atag, s);
+        })();
+    }
+</script>
+<style>
+    
+    .swiper-button-prev{background-image:none;}
+    
+    .swiper-button-next{background-image:none;}
+    
+</style>
+
+
+
+{template "nav.html"}
+		
+
+        		
+	    <div class="nav_block" style="min-height: 0.96rem;">
+            <div class="nav_center">
+                <div class="nav_top">
+                    <div class="nav_top_block">
+                        <div class="nav_top_block_piece">
+                            <div class="nav_top_block_piece_logo_icon">
+                                <a href="/" style="display: block;text-decoration: none;" target="_blank">
+                                    <div class="nav_top_block_piece_logo_icon_img">
+                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_top_block_piece_logo_icon_white.png" alt="">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="nav_top_block_piece_logo_mian">
+                                <ul>
+                                    <li>
+                                        <a href="/" style="text-decoration: none;" target="_blank">
+                                            <h3>
+                                                首页
+                                            </h3>
+                                            <hr>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{dr_share_cat_value(12, 'url')}" style="text-decoration: none;" target="_blank">
+                                            <h3>
+                                                产品中心
+                                            </h3>
+                                            <hr>
+                                        </a>
+                                    <li>
+                                        <a href="{dr_share_cat_value(10, 'url')}" style="text-decoration: none;" target="_blank">
+                                            <h3>
+                                                客户案例
+                                            </h3>
+                                            <hr>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{dr_share_cat_value(7, 'url')}" style="text-decoration: none;" target="_blank">
+                                            <h3>
+                                                新闻中心
+                                            </h3>
+                                            <hr>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{dr_share_cat_value(5, 'url')}" style="text-decoration: none;" target="_blank">
+                                            <h3>
+                                                服务支持    
+                                            </h3>
+                                            <hr>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{dr_share_cat_value(3, 'url')}" style="text-decoration: none;" target="_blank">
+                                            <h3>
+                                                关于豫工
+                                            </h3>
+                                            <hr>
+                                        </a>
+                                    </li>                                        
+                                    <li>
+                                        <a href="{dr_share_cat_value(6, 'url')}" style="text-decoration: none;" target="_blank">
+                                            <h3>
+                                                视频展示
+                                            </h3>
+                                            <hr>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{dr_share_cat_value(2, 'url')}" style="text-decoration: none;" target="_blank">
+                                            <h3>
+                                                联系我们
+                                            </h3>
+                                            <hr>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="nav_top_block_piece_logo_tel">
+                                <div class="nav_top_block_piece_logo_tel_img">
+                                    <div class="nav_top_block_piece_logo_tel_img_icon">
+                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_top_block_piece_logo_img.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="nav_top_block_piece_logo_tel_font">
+                                    <h6>
+                                        全国统一销售热线
+                                    </h6>
+                                    <h3>
+                                        138-3710-3643
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="nav_bottom">
+                    <ul>
+                        <li class="nav_bottom_block_li">
+                            <div class="nav_bottom_block">
+                                <div class="nav_bottom_block_left">
+                                    <ul>
+                                        <li class="nav_bottom_block_left_li_one_active">
+                                            <div class="nav_bottom_block_left_piece">
+                                                <h3>
+                                                    应急系列产品
+                                                </h3>
+                                            </div>
+                                            <div class="nav_bottom_block_left_icon">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_icon.png" alt=""> 
+                                            </div>
+                                            <div class="nav_bottom_block_left_next_two" style="display: block;">
+                                                <ul>
+                                                    <li>
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <h3>
+                                                                冬季应急设备
+                                                            </h3>
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_next_three">
+                                                            <div class="nav_bottom_block_left_next_two_next_three_vertical_line">
+                                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_next_three_vertical_line.png" alt="">
+                                                            </div>
+                                                            <ul>
+                                                                <li data-img="img01">
+                                                                    <a href="https://www.hnyugong.com/show-366.html" style="text-decoration:none;">
+                                                                        <h3>
+                                                                            车载式除雪滚
+                                                                        </h3>
+                                                                    </a>
+                                                                </li>
+                                                                <li data-img="img02">
+                                                                    <a href="https://www.hnyugong.com/show-367.html" style="text-decoration:none;">
+                                                                        <h3>
+                                                                            车载式推雪铲
+                                                                        </h3>
+                                                                    </a>
+                                                                </li>
+                                                                <li data-img="img03">
+                                                                    <a href="https://www.hnyugong.com/show-368.html" style="text-decoration:none;">
+                                                                        <h3>
+                                                                            融雪剂撒布机
+                                                                        </h3>
+                                                                    </a>
+                                                                </li>
+                                                               <li data-img="img04">
+                                                                   <a href="https://www.hnyugong.com/show-371.html" style="text-decoration:none;">
+                                                                        <h3>
+                                                                            车载破冰除雪一体机
+                                                                        </h3>
+                                                                   </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <h3>
+                                                                防汛应急设备
+                                                            </h3>
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_next_three">
+                                                            <div class="nav_bottom_block_left_next_two_next_three_vertical_line">
+                                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_next_three_vertical_line.png" alt="">
+                                                            </div>
+                                                            <ul>
+                                                                <li data-img="img05">
+                                                                    <a href="https://www.hnyugong.com/show-382.html" style="text-decoration:none;">
+                                                                        <h3>
+                                                                            永磁防汛泵
+                                                                        </h3>
+                                                                    </a>
+                                                                </li>
+                                                                <li data-img="img06">
+                                                                    <a href="https://www.hnyugong.com/show-294.html" style="text-decoration:none;">
+                                                                        <h3>
+                                                                            移动防汛水泵
+                                                                        </h3>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav_bottom_block_left_piece">
+                                                <h3>
+                                                    工程钻机
+                                                </h3>
+                                            </div>
+                                            <div class="nav_bottom_block_left_icon">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_icon.png" alt=""> 
+                                            </div>
+                                            <div class="nav_bottom_block_left_next_two">
+                                                <ul>
+                                                    <li data-img="img07">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-327.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    水井钻机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img08">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-326.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    非开挖定向钻
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img09">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-330.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    潜孔钻机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img10">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-329.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    高举升锚固钻机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                   <li data-img="img11">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-328.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    工程履带锚固钻机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav_bottom_block_left_piece">
+                                                <h3>
+                                                    环保系列设备
+                                                </h3>
+                                            </div>
+                                            <div class="nav_bottom_block_left_icon">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_icon.png" alt=""> 
+                                            </div>
+                                            <div class="nav_bottom_block_left_next_two">
+                                                <ul>
+                                                    <li data-img="img12">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-286.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    客土喷播机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img13">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-291.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    工业压滤机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img14">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-385.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    水下清淤机器人
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img15">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-296.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    喷砂机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                   <li data-img="img16">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-292.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    30型筛土机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img17">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-293.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    泥沙分离机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img18">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-295.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    砂浆喷涂机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img19">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-287.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    催化燃烧设备
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img20">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-288.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    水面割草船
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img21">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-289.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    抽沙船
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img22">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-290.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    双轴撕碎机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav_bottom_block_left_piece">
+                                                <h3>
+                                                    路面施工设备
+                                                </h3>
+                                            </div>
+                                            <div class="nav_bottom_block_left_icon">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_icon.png" alt=""> 
+                                            </div>
+                                            <div class="nav_bottom_block_left_next_two">
+                                                <ul>
+                                                    <li data-img="img23">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-372.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    桥梁蒸汽养护器
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img24">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-369.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    工程电热毯                                             
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img25">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-384.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    绿篱修剪机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img26">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-383.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    轮式洗砂机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                   <li data-img="img27">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-381.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    无轴滚简筛
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img28">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-380.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    陶瓷柱塞泵
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img29">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-379.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    隧道风机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img30">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-378.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    移动照明车
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img31">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-377.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    防撞缓冲包
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img32">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-376.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    混凝土输送泵
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img33">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-375.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    液压铣刨机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img34">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-374.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    路面吹扫机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img35">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-373.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    机载式凿毛机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img36">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-332.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    非固化喷涂机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img37">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-279.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    沥青搅拌机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img38">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-278.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    乳化沥青撒布机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img39">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-283.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    550路面抛丸机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img40">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-282.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    热熔划线机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img41">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-281.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    冷喷划线机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img42">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-284.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    沥青路面灌缝机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img43">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-285.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    300型自行走铣刨机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav_bottom_block_left_piece">
+                                                <h3>
+                                                    桥梁预应力设备
+                                                </h3>
+                                            </div>
+                                            <div class="nav_bottom_block_left_icon">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_icon.png" alt=""> 
+                                            </div>
+                                            <div class="nav_bottom_block_left_next_two">
+                                                <ul>
+                                                    <li data-img="img44">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-302.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    高速搅拌机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img45">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-301.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    钢绞线穿束机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img46">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-300.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    防撞墙模板台车
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img47">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-299.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    智能张拉系统
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                   <li data-img="img48">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-298.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    智能压浆系统
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img49">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-297.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    桥梁智能喷淋养护设备
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img50">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-305.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    波纹管制管机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img51">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-304.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    预应力压浆机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img52">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-303.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    高铁螺旋筋成型机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav_bottom_block_left_piece">
+                                                <h3>
+                                                   隧道喷浆支护设备
+                                                </h3>
+                                            </div>
+                                            <div class="nav_bottom_block_left_icon">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_icon.png" alt=""> 
+                                            </div>
+                                            <div class="nav_bottom_block_left_next_two">
+                                                <ul>
+                                                    <li data-img="img53">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-308.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    工字钢弯拱机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img54">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-307.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    中空注浆锚杆
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img55">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-306.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    钢筋网片排焊机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img56">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-311.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    混凝土喷浆车
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                   <li data-img="img57">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-310.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    液压湿喷机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img58">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-309.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    湿喷台车机械手
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav_bottom_block_left_piece">
+                                                <h3>
+                                                   工程注浆设备
+                                                </h3>
+                                            </div>
+                                            <div class="nav_bottom_block_left_icon">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_icon.png" alt=""> 
+                                            </div>
+                                            <div class="nav_bottom_block_left_next_two">
+                                                <ul>
+                                                    <li data-img="img59">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-315.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    拱顶带模注浆一体机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img60">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-314.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    液压双缸注浆泵
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img61">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-313.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    新型软管泵
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img62">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-312.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    二次构造泵
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                   <li data-img="img63">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-316.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    BW系列泥浆泵
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nav_bottom_block_left_piece">
+                                                <h3>
+                                                   切割破拆系列
+                                                </h3>
+                                            </div>
+                                            <div class="nav_bottom_block_left_icon">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_icon.png" alt=""> 
+                                            </div>
+                                            <div class="nav_bottom_block_left_next_two">
+                                                <ul>
+                                                    <li data-img="img64">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-322.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    液压破桩机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img65">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-325.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    矿山绳锯机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img66">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-324.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    10型等离子切割机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                    <li data-img="img67">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-323.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    液压绳锯机
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                   <li data-img="img68">
+                                                        <div class="nav_bottom_block_left_next_two_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_left_next_two_icon.png" alt="">
+                                                        </div>
+                                                        <div class="nav_bottom_block_left_next_two_piece">
+                                                            <a href="https://www.hnyugong.com/show-321.html" style="text-decoration: none">
+                                                                <h3>
+                                                                    液压劈裂棒
+                                                                </h3>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav_bottom_block_middle">
+                                    <ul>
+                                        <li id="img01" style="display: block;">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_01.png" alt="">
+                                        </li>
+                                        <li id="img02">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_02.png" alt="">
+                                        </li>
+                                        <li id="img03">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_03.png" alt="">
+                                        </li>
+                                        <li id="img04">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_04.png" alt="">
+                                        </li>
+                                        <li id="img05">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_05.png" alt="">
+                                        </li>
+                                        <li id="img06">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_06.png" alt="">
+                                        </li>
+                                        <li id="img07">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_07.png" alt="">
+                                        </li>
+                                        <li id="img08">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_08.png" alt="">
+                                        </li>
+                                        <li id="img09">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_09.png" alt="">
+                                        </li>
+                                        <li id="img10">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_10.png" alt="">
+                                        </li>
+                                        <li id="img11">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_11.png" alt="">
+                                        </li>
+                                        <li id="img12">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_12.png" alt="">
+                                        </li>
+                                        <li id="img13">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_13.png" alt="">
+                                        </li>
+                                        <li id="img14">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_14.png" alt="">
+                                        </li>
+                                        <li id="img15">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_15.png" alt="">
+                                        </li>
+                                        <li id="img16">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_16.png" alt="">
+                                        </li>
+                                        <li id="img17">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_17.png" alt="">
+                                        </li>
+                                        <li id="img18">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_18.png" alt="">
+                                        </li>
+                                        <li id="img19">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_19.png" alt="">
+                                        </li>
+                                        <li id="img20">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_20.png" alt="">
+                                        </li>
+                                        <li id="img21">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_21.png" alt="">
+                                        </li>
+                                        <li id="img22">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_22.png" alt="">
+                                        </li>
+                                        <li id="img23">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_23.png" alt="">
+                                        </li>
+                                        <li id="img24">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_24.png" alt="">
+                                        </li>
+                                        <li id="img25">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_25.png" alt="">
+                                        </li>
+                                        <li id="img26">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_26.png" alt="">
+                                        </li>
+                                        <li id="img27">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_27.png" alt="">
+                                        </li>
+                                        <li id="img28">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_28.png" alt="">
+                                        </li>
+                                        <li id="img29">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_29.png" alt="">
+                                        </li>
+                                        <li id="img30">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_30.png" alt="">
+                                        </li>
+                                        <li id="img31">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_31.png" alt="">
+                                        </li>
+                                        <li id="img32">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_32.png" alt="">
+                                        </li>
+                                        <li id="img33">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_33.png" alt="">
+                                        </li>
+                                        <li id="img34">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_34.png" alt="">
+                                        </li>
+                                        <li id="img35">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_35.png" alt="">
+                                        </li>
+                                        <li id="img36">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_36.png" alt="">
+                                        </li>
+                                        <li id="img37">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_37.png" alt="">
+                                        </li>
+                                        <li id="img38">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_38.png" alt="">
+                                        </li>
+                                        <li id="img39">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_39.png" alt="">
+                                        </li>
+                                        <li id="img40">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_40.png" alt="">
+                                        </li>
+                                        <li id="img41">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_41.png" alt="">
+                                        </li>
+                                        <li id="img42">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_42.png" alt="">
+                                        </li>
+                                        <li id="img43">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_43.png" alt="">
+                                        </li>
+                                        <li id="img44">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_44.png" alt="">
+                                        </li>
+                                        <li id="img45">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_45.png" alt="">
+                                        </li>
+                                        <li id="img46">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_46.png" alt="">
+                                        </li>
+                                        <li id="img47">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_47.png" alt="">
+                                        </li>
+                                        <li id="img48">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_48.png" alt="">
+                                        </li>
+                                        <li id="img49">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_49.png" alt="">
+                                        </li>
+                                        <li id="img50">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_50.png" alt="">
+                                        </li>
+                                        <li id="img51">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_51.png" alt="">
+                                        </li>
+                                        <li id="img52">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_52.png" alt="">
+                                        </li>
+                                        <li id="img53">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_53.png" alt="">
+                                        </li>
+                                        <li id="img54">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_54.png" alt="">
+                                        </li>
+                                        <li id="img55">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_55.png" alt="">
+                                        </li>
+                                        <li id="img56">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_56.png" alt="">
+                                        </li>
+                                        <li id="img57">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_57.png" alt="">
+                                        </li>
+                                        <li id="img58">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_58.png" alt="">
+                                        </li>
+                                        <li id="img59">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_59.png" alt="">
+                                        </li>
+                                        <li id="img60">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_60.png" alt="">
+                                        </li>
+                                        <li id="img61">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_61.png" alt="">
+                                        </li>
+                                        <li id="img62">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_62.png" alt="">
+                                        </li>
+                                        <li id="img63">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_63.png" alt="">
+                                        </li>
+                                        <li id="img64">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_64.png" alt="">
+                                        </li>
+                                        <li id="img65">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_65.png" alt="">
+                                        </li>
+                                        <li id="img66">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_66.png" alt="">
+                                        </li>
+                                        <li id="img67">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_67.png" alt="">
+                                        </li>
+                                        <li id="img68">
+                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_middle_image_68.png" alt="">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="nav_bottom_block_right">
+                                    <div class="nav_bottom_block_right_contact">
+                                        <div class="nav_bottom_block_right_contact_tel">
+                                            <h3>
+                                                138-3710-3643
+                                            </h3>
+                                        </div>
+                                        <div class="nav_bottom_block_right_contact_link">
+                                            <a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none" target="_blank">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_block_right_contact_link_icon.png" alt="">
+                                                <h3>
+                                                    咨询工厂价
+                                                </h3>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav_bottom_piece_li">
+                            <div class="nav_bottom_piece">
+                                <div class="nav_bottom_piece_left">
+                                    <div class="nav_bottom_piece_left_content">
+                                        <div class="nav_bottom_piece_left_content_h3">
+                                            <h3>
+                                                豫工动态
+                                            </h3>
+                                        </div>
+                                        <div class="nav_bottom_piece_left_content_p">
+                                            <p>
+                                                豫工机械以“优厂优品，优质优价”为服务导向，拥有8大产品系列，100多款产品，提供售前-售中-售后一站式服务，扎根市场。
+                                            </p>
+                                            <p>
+                                                客户遍布全球，与英国 法国、意大利、西班牙、南非、日本、韩国等100多个国家和地区 的企业建立合作关系。
+                                            </p>  
+                                        </div>
+                                    </div>
+                                    <div class="nav_bottom_piece_left_content_link">
+                                        <ul>
+                                            <li>
+                                                <a href="{dr_share_cat_value(8, 'url')}" style="text-decoration: none;">
+                                                    <div class="nav_bottom_piece_left_content_link_li_a_chunk">
+                                                        <h3>
+                                                            公司新闻
+                                                        </h3>
+                                                        <div class="nav_bottom_piece_left_content_link_li_a_chunk_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_icon.png" alt="">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_icon_white.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav_bottom_piece_left_content_link_li_a_line">
+                                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_a_line.png" alt="">
+                                                    </div>
+                                                </a>    
+                                            </li>
+                                            <li>
+                                                <a href="{dr_share_cat_value(9, 'url')}" style="text-decoration: none;">
+                                                    <div class="nav_bottom_piece_left_content_link_li_a_chunk">
+                                                        <h3>
+                                                            行业新闻
+                                                        </h3>
+                                                        <div class="nav_bottom_piece_left_content_link_li_a_chunk_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_icon.png" alt="">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_icon_white.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav_bottom_piece_left_content_link_li_a_line">
+                                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_a_line.png" alt="">
+                                                    </div>
+                                                </a>  
+                                            </li>
+                                            <li>
+                                                <a href="{dr_share_cat_value(6, 'url')}" style="text-decoration: none;">
+                                                    <div class="nav_bottom_piece_left_content_link_li_a_chunk">
+                                                        <h3>
+                                                            视频展示
+                                                        </h3>
+                                                        <div class="nav_bottom_piece_left_content_link_li_a_chunk_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_icon.png" alt="">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_icon_white.png" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="nav_bottom_piece_left_content_link_li_a_line">
+                                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_left_content_link_li_a_line.png" alt="">
+                                                    </div>
+                                                </a>  
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="nav_bottom_piece_right">
+                                    <div class="nav_bottom_piece_right_img">
+                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_piece_right_img.jpg" alt=""> 
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav_bottom_lump_li">
+                            <div class="nav_bottom_lump">
+                                <div class="nav_bottom_lump_left">
+                                    <div class="nav_bottom_lump_left_content">
+                                        <div class="nav_bottom_lump_left_content_h3">
+                                            <h3>
+                                                走进豫工
+                                            </h3>
+                                        </div>
+                                        <div class="nav_bottom_lump_left_content_p">
+                                            <p>
+                                                河南豫工机械有限公司，成立于2005年，是工程设备研发、生产、销售于一体的大型综合性企业，位于国家中心城市————郑州
+                                            </p>
+                                            <p>
+                                                公司经过近20年高速发展，技术力量雄厚，加工设备齐全，检测手段完备，专注于路面机械、隧道喷浆支护设备、桥梁设备、工程注浆泵、防汛除雪应急设备等的研发制造，历经千百次改进，精工品质，稳定可靠。拥有8大产品系列，100多款产品，提供售前-售中-售后一站式服务，扎根市场，服务全球。
+                                            </p>  
+                                        </div>
+                                    </div>
+                                    <div class="nav_bottom_lump_left_content_link">
+                                        <ul>
+                                            <li>
+                                                <a href="{dr_share_cat_value(3, 'url')}" style="text-decoration: none;">
+                                                    <div class="nav_bottom_lump_left_content_link_li_a_chunk">
+                                                        <h3>
+                                                            公司简介
+                                                        </h3>
+                                                        <div class="nav_bottom_lump_left_content_link_li_a_chunk_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_lump_left_content_link_li_icon.png" alt="">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_lump_left_content_link_li_icon_white.png" alt="">
+                                                        </div>    
+                                                    </div>
+                                                    <div class="nav_bottom_lump_left_content_link_li_a_line">
+                                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_lump_left_content_link_li_a_line.png" alt="">
+                                                    </div>
+                                                </a>    
+                                            </li>
+                                            <li>
+                                                <a href="{dr_share_cat_value(4, 'url')}" style="text-decoration: none;">
+                                                    <div class="nav_bottom_lump_left_content_link_li_a_chunk">
+                                                        <h3>
+                                                            荣誉殿堂
+                                                        </h3>
+                                                        <div class="nav_bottom_lump_left_content_link_li_a_chunk_icon">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_lump_left_content_link_li_icon.png" alt="">
+                                                            <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_lump_left_content_link_li_icon_white.png" alt="">
+                                                        </div>  
+                                                    </div>
+                                                    <div class="nav_bottom_lump_left_content_link_li_a_line">
+                                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_lump_left_content_link_li_a_line.png" alt="">
+                                                    </div>
+                                                </a>  
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="nav_bottom_lump_right">
+                                    <div class="nav_bottom_lump_right_img">
+                                        <img src="{THEME_PATH}assets/newdaguanwang/images/index/nav_bottom_lump_right_img.jpg" alt=""> 
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav_hr">
+                <div class="nav_hr_one">
+                </div>
+                <div class="nav_hr_two">
+                </div>
+                <div class="nav_hr_three">
+                </div>
+            </div>
+        </div>
+        
+                    
+        
+
+        <script>
+        
+            
+            $(document).ready(function() {
+              // 监听窗口的滚动事件
+              $(window).on('scroll', function() {
+                  
+                // 获取当前滚动的距离
+                var scrollTop = $(this).scrollTop();
+            
+                // 根据scrollTop判断是否在顶部
+                if (scrollTop === 0) {
+                      
+                  // 在顶部时，让导航背景变成透明
+                  $('.nav_top').css('background-color', 'rgba(255,255,255,0)');
+                  
+                  $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#fff");
+                  
+                  $(".nav_top_block_piece_logo_tel_font h6").css("color","#fff");
+                  
+                  $(".nav_top_block_piece_logo_tel_font h3").css("color","#fff");
+                  
+                  
+                  //导航滑过
+                  $(".nav_top").hover(function(){
+                        
+                        $('.nav_top').css('background-color', '#fff');
+                        
+                        $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#252F36");
+                      
+                        $(".nav_top_block_piece_logo_tel_font h6").css("color","#252F36");
+                      
+                        $(".nav_top_block_piece_logo_tel_font h3").css("color","#252F36");
+                         
+                        
+                  },function(){
+                        
+                        $('.nav_top').css('background-color', 'rgba(255,255,255,0)');
+  
+                        $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#fff");
+                          
+                        $(".nav_top_block_piece_logo_tel_font h6").css("color","#fff");
+                          
+                        $(".nav_top_block_piece_logo_tel_font h3").css("color","#fff");
+                
+                        
+                        
+                   })      
+                   
+                   //鼠标离开
+                   
+                    $(".nav_block").on("mouseleave", function() {
+                        // 鼠标离开 .nav_block 时，将 nav_top 的背景色设置为透明
+                        $(".nav_top").css("background-color", "rgba(255,255,255,0)");
+                    
+                        // 同时修改文本颜色
+                        $(".nav_top_block_piece_logo_mian ul li a h3").css("color", "#fff");
+                        $(".nav_top_block_piece_logo_tel_font h6").css("color", "#fff");
+                        $(".nav_top_block_piece_logo_tel_font h3").css("color", "#fff");
+                    });
+                      
+                      
+                      
+                      // =============== 第 1、3、5、7、8 个 li ===============
+                      // 索引分别是 0、2、4、6、7
+                      const specialIndices = [0, 2, 4, 6, 7];
+                      $(".nav_top_block_piece_logo_mian ul li").each(function (index) {
+                        if (specialIndices.includes(index)) {
+                          $(this).hover(
+                            function () {
+                              // 鼠标进入
+                              if (!$(this).hasClass("nav_top_block_piece_logo_mian_active")) {
+                                $(this).addClass("nav_top_block_piece_logo_mian_active");
+                              };
+                              
+                                $('.nav_top').css('background-color', '#fff');
+                        
+                                $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#252F36");
+                              
+                                $(".nav_top_block_piece_logo_tel_font h6").css("color","#252F36");
+                              
+                                $(".nav_top_block_piece_logo_tel_font h3").css("color","#252F36");
+                              
+                            },
+                            function () {
+                              // 鼠标离开
+                              if ($(this).hasClass("nav_top_block_piece_logo_mian_active")) {
+                                $(this).removeClass("nav_top_block_piece_logo_mian_active");
+                              };
+                              
+                                $('.nav_top').css('background-color', 'rgba(255,255,255,0)');
+          
+                                $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#fff");
+                                  
+                                $(".nav_top_block_piece_logo_tel_font h6").css("color","#fff");
+                                  
+                                $(".nav_top_block_piece_logo_tel_font h3").css("color","#fff");
+                              
+                            }
+                          );
+                        }
+                      });
+                    
+                      // =============== 第 2 个 li + .nav_bottom_block_li ===============
+                      // li.eq(1) => 第二个 li
+                      $(".nav_top_block_piece_logo_mian ul li").eq(1).add(".nav_bottom_block_li").hover(
+                        function () {
+                          // 鼠标进入 li 的第 2 个 或者进入 .nav_bottom_block_li
+                          // 1. 给第 2 个 li 加上 nav_top_block_piece_logo_mian_active
+                          if (!$(".nav_top_block_piece_logo_mian ul li").eq(1).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(1).addClass("nav_top_block_piece_logo_mian_active");
+                          };
+                          // 2. 显示 .nav_bottom_block_li 和 .nav_hr_one
+                          $(".nav_bottom_block_li, .nav_hr_one").show();
+                          // 3. 隐藏 .nav_bottom_piece_li, .nav_hr_two, .nav_bottom_lump_li, .nav_hr_three
+                          $(".nav_bottom_piece_li, .nav_hr_two, .nav_bottom_lump_li, .nav_hr_three").hide();
+                          
+                            $('.nav_top').css('background-color', '#fff');
+                    
+                            $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#252F36");
+                          
+                            $(".nav_top_block_piece_logo_tel_font h6").css("color","#252F36");
+                          
+                            $(".nav_top_block_piece_logo_tel_font h3").css("color","#252F36");
+                          
+                        },
+                        function () {
+                          // 鼠标同时离开 li 的第 2 个 和 .nav_bottom_block_li（从这两个区域都移开）
+                          // 1. 移除第 2 个 li 上的 nav_top_block_piece_logo_mian_active
+                          if ($(".nav_top_block_piece_logo_mian ul li").eq(1).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(1).removeClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          // 2. 隐藏 .nav_bottom_block_li 和 .nav_hr_one
+                          $(".nav_bottom_block_li, .nav_hr_one").hide();
+                          
+                            $('.nav_top').css('background-color', 'rgba(255,255,255,0)');
+      
+                            $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#fff");
+                              
+                            $(".nav_top_block_piece_logo_tel_font h6").css("color","#fff");
+                              
+                            $(".nav_top_block_piece_logo_tel_font h3").css("color","#fff");
+                          
+                        }
+                      );
+                    
+                      // =============== 第 4 个 li + .nav_bottom_piece_li ===============
+                      // li.eq(3) => 第四个 li
+                      $(".nav_top_block_piece_logo_mian ul li").eq(3).add(".nav_bottom_piece_li").hover(
+                        function () {
+                          // 鼠标进入 li 的第 4 个 或者进入 .nav_bottom_piece_li
+                          // 1. 给第 4 个 li 加上 nav_top_block_piece_logo_mian_active
+                          if (!$(".nav_top_block_piece_logo_mian ul li").eq(3).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(3).addClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          // 2. 显示 .nav_bottom_piece_li 和 .nav_hr_two
+                          $(".nav_bottom_piece_li, .nav_hr_two").show();
+                          // 3. 隐藏 .nav_bottom_block_li, .nav_hr_one, .nav_bottom_lump_li, .nav_hr_three
+                          $(".nav_bottom_block_li, .nav_hr_one, .nav_bottom_lump_li, .nav_hr_three").hide();
+                          
+                            $('.nav_top').css('background-color', '#fff');
+                    
+                            $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#252F36");
+                          
+                            $(".nav_top_block_piece_logo_tel_font h6").css("color","#252F36");
+                          
+                            $(".nav_top_block_piece_logo_tel_font h3").css("color","#252F36");
+                        },
+                        function () {
+                          // 鼠标同时离开 li 的第 4 个 和 .nav_bottom_piece_li
+                          if ($(".nav_top_block_piece_logo_mian ul li").eq(3).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(3).removeClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          $(".nav_bottom_piece_li, .nav_hr_two").hide();
+                          
+                            $('.nav_top').css('background-color', 'rgba(255,255,255,0)');
+      
+                            $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#fff");
+                              
+                            $(".nav_top_block_piece_logo_tel_font h6").css("color","#fff");
+                              
+                            $(".nav_top_block_piece_logo_tel_font h3").css("color","#fff");
+                          
+                        }
+                      );
+                    
+                      // =============== 第 6 个 li + .nav_bottom_lump_li ===============
+                      // li.eq(5) => 第六个 li
+                      $(".nav_top_block_piece_logo_mian ul li").eq(5).add(".nav_bottom_lump_li").hover(
+                        function () {
+                          // 鼠标进入 li 的第 6 个 或者进入 .nav_bottom_lump_li
+                          // 1. 给第 6 个 li 加上 nav_top_block_piece_logo_mian_active
+                          if (!$(".nav_top_block_piece_logo_mian ul li").eq(5).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(5).addClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          // 2. 显示 .nav_bottom_lump_li 和 .nav_hr_three
+                          $(".nav_bottom_lump_li, .nav_hr_three").show();
+                          // 3. 隐藏 .nav_bottom_piece_li, .nav_hr_one, .nav_bottom_block_li, .nav_hr_two
+                          $(".nav_bottom_piece_li, .nav_hr_one, .nav_bottom_block_li, .nav_hr_two").hide();
+                          
+                            $('.nav_top').css('background-color', '#fff');
+                    
+                            $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#252F36");
+                          
+                            $(".nav_top_block_piece_logo_tel_font h6").css("color","#252F36");
+                          
+                            $(".nav_top_block_piece_logo_tel_font h3").css("color","#252F36");
+                          
+                          
+                        },
+                        function () {
+                          // 鼠标同时离开 li 的第 6 个 和 .nav_bottom_lump_li
+                          if ($(".nav_top_block_piece_logo_mian ul li").eq(5).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(5).removeClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          $(".nav_bottom_lump_li, .nav_hr_three").hide();
+                          
+                            $('.nav_top').css('background-color', 'rgba(255,255,255,0)');
+      
+                            $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#fff");
+                              
+                            $(".nav_top_block_piece_logo_tel_font h6").css("color","#fff");
+                              
+                            $(".nav_top_block_piece_logo_tel_font h3").css("color","#fff");
+                          
+                        }
+                      );  
+                  
+                  
+                  
+                  
+                  
+                } else {
+                  // 离开顶部时，让导航背景变成白色
+                  $('.nav_top').css('background-color', '#fff');
+                  
+                  $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#252F36");
+                  
+                  $(".nav_top_block_piece_logo_tel_font h6").css("color","#252F36");
+                  
+                  $(".nav_top_block_piece_logo_tel_font h3").css("color","#252F36");
+                  
+                  //导航滑过
+                  $(".nav_top").hover(function(){
+                        
+                        $('.nav_top').css('background-color', '#fff');
+                        
+                        $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#252F36");
+                      
+                        $(".nav_top_block_piece_logo_tel_font h6").css("color","#252F36");
+                      
+                        $(".nav_top_block_piece_logo_tel_font h3").css("color","#252F36");
+                         
+                        
+                  },function(){
+                        
+                        $('.nav_top').css('background-color', '#fff');
+                        
+                        $(".nav_top_block_piece_logo_mian ul li a h3").css("color","#252F36");
+                      
+                        $(".nav_top_block_piece_logo_tel_font h6").css("color","#252F36");
+                      
+                        $(".nav_top_block_piece_logo_tel_font h3").css("color","#252F36");
+                        
+                        
+                        
+                   })
+                   
+                   
+                    //鼠标离开
+                   
+                    $(".nav_block").on("mouseleave", function() {
+                        // 鼠标离开 .nav_block 时，将 nav_top 的背景色设置为透明
+                        $(".nav_top").css("background-color", "#fff");
+                    
+                        // 同时修改文本颜色
+                        $(".nav_top_block_piece_logo_mian ul li a h3").css("color", "#252F36");
+                        $(".nav_top_block_piece_logo_tel_font h6").css("color", "#252F36");
+                        $(".nav_top_block_piece_logo_tel_font h3").css("color", "#252F36");
+                        
+                    });
+                  
+                  
+                      // =============== 第 1、3、5、7、8 个 li ===============
+                      // 索引分别是 0、2、4、6、7
+                      const specialIndices = [0, 2, 4, 6, 7];
+                      $(".nav_top_block_piece_logo_mian ul li").each(function (index) {
+                        if (specialIndices.includes(index)) {
+                          $(this).hover(
+                            function () {
+                              // 鼠标进入
+                              if (!$(this).hasClass("nav_top_block_piece_logo_mian_active")) {
+                                $(this).addClass("nav_top_block_piece_logo_mian_active");
+                              }
+                            },
+                            function () {
+                              // 鼠标离开
+                              if ($(this).hasClass("nav_top_block_piece_logo_mian_active")) {
+                                $(this).removeClass("nav_top_block_piece_logo_mian_active");
+                              }
+                            }
+                          );
+                        }
+                      });
+                    
+                      // =============== 第 2 个 li + .nav_bottom_block_li ===============
+                      // li.eq(1) => 第二个 li
+                      $(".nav_top_block_piece_logo_mian ul li").eq(1).add(".nav_bottom_block_li").hover(
+                        function () {
+                          // 鼠标进入 li 的第 2 个 或者进入 .nav_bottom_block_li
+                          // 1. 给第 2 个 li 加上 nav_top_block_piece_logo_mian_active
+                          if (!$(".nav_top_block_piece_logo_mian ul li").eq(1).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(1).addClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          // 2. 显示 .nav_bottom_block_li 和 .nav_hr_one
+                          $(".nav_bottom_block_li, .nav_hr_one").show();
+                          // 3. 隐藏 .nav_bottom_piece_li, .nav_hr_two, .nav_bottom_lump_li, .nav_hr_three
+                          $(".nav_bottom_piece_li, .nav_hr_two, .nav_bottom_lump_li, .nav_hr_three").hide();
+                        },
+                        function () {
+                          // 鼠标同时离开 li 的第 2 个 和 .nav_bottom_block_li（从这两个区域都移开）
+                          // 1. 移除第 2 个 li 上的 nav_top_block_piece_logo_mian_active
+                          if ($(".nav_top_block_piece_logo_mian ul li").eq(1).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(1).removeClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          // 2. 隐藏 .nav_bottom_block_li 和 .nav_hr_one
+                          $(".nav_bottom_block_li, .nav_hr_one").hide();
+                        }
+                      );
+                    
+                      // =============== 第 4 个 li + .nav_bottom_piece_li ===============
+                      // li.eq(3) => 第四个 li
+                      $(".nav_top_block_piece_logo_mian ul li").eq(3).add(".nav_bottom_piece_li").hover(
+                        function () {
+                          // 鼠标进入 li 的第 4 个 或者进入 .nav_bottom_piece_li
+                          // 1. 给第 4 个 li 加上 nav_top_block_piece_logo_mian_active
+                          if (!$(".nav_top_block_piece_logo_mian ul li").eq(3).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(3).addClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          // 2. 显示 .nav_bottom_piece_li 和 .nav_hr_two
+                          $(".nav_bottom_piece_li, .nav_hr_two").show();
+                          // 3. 隐藏 .nav_bottom_block_li, .nav_hr_one, .nav_bottom_lump_li, .nav_hr_three
+                          $(".nav_bottom_block_li, .nav_hr_one, .nav_bottom_lump_li, .nav_hr_three").hide();
+                        },
+                        function () {
+                          // 鼠标同时离开 li 的第 4 个 和 .nav_bottom_piece_li
+                          if ($(".nav_top_block_piece_logo_mian ul li").eq(3).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(3).removeClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          $(".nav_bottom_piece_li, .nav_hr_two").hide();
+                        }
+                      );
+                    
+                      // =============== 第 6 个 li + .nav_bottom_lump_li ===============
+                      // li.eq(5) => 第六个 li
+                      $(".nav_top_block_piece_logo_mian ul li").eq(5).add(".nav_bottom_lump_li").hover(
+                        function () {
+                          // 鼠标进入 li 的第 6 个 或者进入 .nav_bottom_lump_li
+                          // 1. 给第 6 个 li 加上 nav_top_block_piece_logo_mian_active
+                          if (!$(".nav_top_block_piece_logo_mian ul li").eq(5).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(5).addClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          // 2. 显示 .nav_bottom_lump_li 和 .nav_hr_three
+                          $(".nav_bottom_lump_li, .nav_hr_three").show();
+                          // 3. 隐藏 .nav_bottom_piece_li, .nav_hr_one, .nav_bottom_block_li, .nav_hr_two
+                          $(".nav_bottom_piece_li, .nav_hr_one, .nav_bottom_block_li, .nav_hr_two").hide();
+                        },
+                        function () {
+                          // 鼠标同时离开 li 的第 6 个 和 .nav_bottom_lump_li
+                          if ($(".nav_top_block_piece_logo_mian ul li").eq(5).hasClass("nav_top_block_piece_logo_mian_active")) {
+                            $(".nav_top_block_piece_logo_mian ul li").eq(5).removeClass("nav_top_block_piece_logo_mian_active");
+                          }
+                          $(".nav_bottom_lump_li, .nav_hr_three").hide();
+                        }
+                      );
+                      
+                  
+                  
+                  
+                }
+                
+                
+              });
+              
+              // 页面加载完毕后，手动执行一次 scroll 事件里的逻辑
+              $(window).trigger('scroll');
+              
+            });
+            
+            
+
+            
+            
+            
+        </script>
+        
+        
+
+        
+        
+        <script>
+            
+            $(function(){
+                
+                $(".nav_bottom_piece_left_content_link ul li").hover(function(){
+                    
+                    
+                    $(this).css("background-color","#006EFF");
+                    
+                    $(this).find(".nav_bottom_piece_left_content_link_li_a_line img").fadeOut(0);
+                    
+                    $(this).find("h3").css("color","#fff");
+                    
+                    $(this).find("h3").css("left","0.2rem");
+                    
+                    $(this).find(".nav_bottom_piece_left_content_link_li_a_chunk_icon").css("right","0.2rem");
+                    
+                    $(this).find(".nav_bottom_piece_left_content_link_li_a_chunk_icon img:nth-of-type(1)").fadeOut(0);
+                    
+                    $(this).find(".nav_bottom_piece_left_content_link_li_a_chunk_icon img:nth-of-type(2)").fadeIn();
+                    
+                    
+                },function(){
+                    
+                    
+                    $(this).css("background-color","transparent");
+                    
+                    $(this).find(".nav_bottom_piece_left_content_link_li_a_line img").fadeIn();
+                    
+                    $(this).find("h3").css("color","#252F36");
+                    
+                    $(this).find("h3").css("left","0rem");
+                    
+                    $(this).find(".nav_bottom_piece_left_content_link_li_a_chunk_icon").css("right","0rem");
+                    
+                    $(this).find(".nav_bottom_piece_left_content_link_li_a_chunk_icon img:nth-of-type(1)").fadeIn();
+                    
+                    $(this).find(".nav_bottom_piece_left_content_link_li_a_chunk_icon img:nth-of-type(2)").fadeOut(0);
+                     
+                    
+                })
+                
+                
+            })
+            
+            
+            $(function(){
+                
+                $(".nav_bottom_lump_left_content_link ul li").hover(function(){
+                    
+                    
+                    $(this).css("background-color","#006EFF");
+                    
+                    $(this).find(".nav_bottom_lump_left_content_link_li_a_line img").fadeOut(0);
+                    
+                    $(this).find("h3").css("color","#fff");
+                    
+                    $(this).find("h3").css("left","0.2rem");
+                    
+                    $(this).find(".nav_bottom_lump_left_content_link_li_a_chunk_icon").css("right","0.2rem");
+                    
+                    $(this).find(".nav_bottom_lump_left_content_link_li_a_chunk_icon img:nth-of-type(1)").fadeOut(0);
+                    
+                    $(this).find(".nav_bottom_lump_left_content_link_li_a_chunk_icon img:nth-of-type(2)").fadeIn();
+                    
+                    
+                },function(){
+                    
+                    
+                    $(this).css("background-color","transparent");
+                    
+                    $(this).find(".nav_bottom_lump_left_content_link_li_a_line img").fadeIn();
+                    
+                    $(this).find("h3").css("color","#252F36");
+                    
+                    $(this).find("h3").css("left","0rem");
+                    
+                    $(this).find(".nav_bottom_lump_left_content_link_li_a_chunk_icon").css("right","0rem");
+                    
+                    $(this).find(".nav_bottom_lump_left_content_link_li_a_chunk_icon img:nth-of-type(1)").fadeIn();
+                    
+                    $(this).find(".nav_bottom_lump_left_content_link_li_a_chunk_icon img:nth-of-type(2)").fadeOut(0);
+                     
+                    
+                })
+                
+                
+            })
+                        
+            
+        </script>
+        
+
+        
+        
+        <script>
+            
+            $(function(){
+                
+                
+                $(".nav_bottom_block_left>ul>li").hover(function(){
+                    
+                    $(this).addClass("nav_bottom_block_left_li_one_active").siblings("li").removeClass("nav_bottom_block_left_li_one_active");
+                    
+                    
+                    $(this).find(".nav_bottom_block_left_next_two").css("display","block");
+                    
+                    
+                    $(this).siblings("li").find(".nav_bottom_block_left_next_two").css("display","none");
+                    
+                    
+                    
+                    // 检查当前二级菜单项是否有三级菜单项
+                    if ($(this).find('.nav_bottom_block_left_next_two_next_three ul li').length === 0) {
+                        
+                        
+                        //没有三级菜单项
+                        
+                        var imgId = $(this).find("li").data('img');
+                    
+                        $(".nav_bottom_block_middle ul li").hide();
+                        
+                        $("#" + imgId).show();
+                        
+
+                        
+                        
+                    }else{
+                        
+                        // 如果有三级菜单项，不做处理，交由三级菜单项的悬停事件处理
+                        
+                        var imgId = $(this).find("li").data('img');
+                        
+                        var imgId = "img01";
+                    
+                        $(".nav_bottom_block_middle ul li").hide();
+                        
+                        $("#" + imgId).show();
+                        
+                        
+                        
+                    }
+                    
+                    
+
+                    
+                    
+                },function(){
+                    
+                    
+                    
+                })
+                
+                
+                
+                $(".nav_bottom_block_left_next_two>ul>li").hover(function(){
+                    
+                    
+                    
+                    
+                        // 检查当前二级菜单项是否有三级菜单项
+                        if ($(this).find('.nav_bottom_block_left_next_two_next_three ul li').length === 0) {
+                            
+                            
+                            //没有三级菜单项
+                            
+                            $(this).addClass("nav_bottom_block_left_li_two_active").siblings("li").removeClass("nav_bottom_block_left_li_two_active");
+                            
+
+                            
+                            
+                        }else{
+                            
+                            // 如果有三级菜单项，不做处理，交由三级菜单项的悬停事件处理
+                            
+                            $(this).addClass("nav_bottom_block_left_li_two_active").siblings("li").removeClass("nav_bottom_block_left_li_two_active");
+
+
+                            $(this).find(".nav_bottom_block_left_next_two_next_three").css("display","block");
+
+
+                            $(this).siblings("li").find(".nav_bottom_block_left_next_two_next_three").css("display","none");
+                            
+                            var imgId = $(this).find("li").data('img');
+                            
+                            //console.log(imgId);
+                            
+                            $(".nav_bottom_block_middle ul li").hide();
+                        
+                            $("#" + imgId).show();
+                            
+                            
+                            
+                        }
+                        
+                        
+                    
+
+                    
+                    
+                },function(){
+                    
+                    
+                    
+                        // 检查当前二级菜单项是否有三级菜单项
+                        if ($(this).find('.nav_bottom_block_left_next_two_next_three ul li').length === 0) {
+                            
+                            
+                            //没有三级菜单项
+                            
+                            $(this).removeClass("nav_bottom_block_left_li_two_active");
+                            
+                            
+                            
+                            
+                            
+                        }else{
+                            
+                            // 如果有三级菜单项，不做处理，交由三级菜单项的悬停事件处理
+                            
+                            
+                            $(this).addClass("nav_bottom_block_left_li_two_active").siblings("li").removeClass("nav_bottom_block_left_li_two_active");
+                            
+                            
+                            $(this).removeClass("nav_bottom_block_left_li_two_active");
+                            
+                            
+                            var imgId = $(this).find("li").data('img');
+                        
+                            var imgId = "img01";
+                    
+                            $(".nav_bottom_block_middle ul li").hide();
+                        
+                            $("#" + imgId).show();
+
+
+                            //$(this).find(".nav_bottom_block_left_next_two_next_three").css("display","block");
+
+
+                            //$(this).siblings("li").find(".nav_bottom_block_left_next_two_next_three").css("display","none");
+                            
+                            
+                        }
+                        
+                    
+                    
+                    
+                })
+                
+                
+                
+                $(".nav_bottom_block_left_next_two_next_three>ul>li").hover(function(){
+                    
+                    $(this).addClass("nav_bottom_block_left_li_three_active").siblings("li").removeClass("nav_bottom_block_left_li_three_active");
+                    
+                },function(){
+                    
+                    $(this).removeClass("nav_bottom_block_left_li_three_active");
+                    
+                })
+                
+                
+                
+                
+                
+                $(".nav_bottom_block_left_next_two").hover(function(){
+                    
+                    
+                    
+                    
+                    
+                         // 检查当前二级菜单项是否有三级菜单项
+                        if ($(this).find('.nav_bottom_block_left_next_two_next_three ul li').length === 0) {
+                            
+                            
+                            //没有三级菜单项
+                            
+                            $(".nav_bottom_block_left_next_two").css({"width":"11.24rem","height":"4.91rem"});
+                    
+                    
+                            $(".nav_bottom_block_left_next_two>ul").css({"width":"11.24rem","height":"4.91rem"});    
+                            
+                            
+                            
+                        }else{
+                            
+                            // 如果有三级菜单项，不做处理，交由三级菜单项的悬停事件处理
+                            
+
+                            
+                            
+                        }
+                        
+                    
+                    
+                    
+                    
+                            
+
+                    
+                    
+                    
+                },function(){
+                    
+                    
+                    
+                    
+                        // 检查当前二级菜单项是否有三级菜单项
+                        if ($(this).find('.nav_bottom_block_left_next_two_next_three ul li').length === 0) {
+                            
+                            
+                            //没有三级菜单项
+                            
+                            $(".nav_bottom_block_left_next_two").css({"width":"11.24rem","height":"4.91rem"});
+                    
+                    
+                            $(".nav_bottom_block_left_next_two>ul").css({"width":"11.24rem","height":"4.91rem"});
+                            
+                                                
+                            //$(this).css("display","none");
+                            
+                            
+                            var imgId = $(this).find("li").data('img');
+                            
+                            $(".nav_bottom_block_middle ul li").hide();
+                            
+                            $("#" + imgId).show();
+                            
+                            
+                            
+                            
+                        }else{
+                            
+                            // 如果有三级菜单项，不做处理，交由三级菜单项的悬停事件处理
+                            
+
+                            
+                            
+                        }
+                        
+                    
+                    
+                    
+
+                
+                    
+                    
+                    
+                });
+                
+                
+                
+                
+                
+                $(".nav_bottom_block_left_next_two_next_three").hover(function(){
+                    
+                    
+                    //console.log(123);
+                    
+                    
+                    $(".nav_bottom_block_left_next_two_next_three").css({"width":"9.4rem"});
+                    
+                    
+                    
+                },function(){
+                    
+                    
+                    
+                    $(".nav_bottom_block_left_next_two_next_three").css({"width":"9.4rem"});
+                    
+                                                
+                    //$(this).css("display","none");
+                    
+                    var imgId = $(this).find("li").data('img');
+                    
+                    //console.log(imgId);
+                    
+                    var imgId = "img01";
+                    
+                    $(".nav_bottom_block_middle ul li").hide();
+                    
+                    $("#" + imgId).show();
+                    
+                            
+                            
+
+                        
+                    
+                });
+                
+                
+                
+                
+            })
+            
+            
+        </script>
+        
+
+        
+        
+        <script>
+            
+            
+            $(function() {
+                // 初始时隐藏所有图片
+                $(".nav_bottom_block_middle ul li:not(:first-child)").hide();
+                
+                // 处理三级菜单项的悬停事件
+                $(".nav_bottom_block_left_next_two_next_three ul li").hover(
+                    function() {
+                        // 鼠标进入三级菜单项：显示对应的图片
+                        var imgId = $(this).data('img');
+                        $(".nav_bottom_block_middle ul li").hide();
+                        $("#" + imgId).show();
+                    },
+                    function() {
+                        // 鼠标离开三级菜单项：可选处理
+                    }
+                );
+                
+                // 处理二级菜单项的悬停事件
+                $(".nav_bottom_block_left_next_two ul li").hover(
+                    function() {
+                        // 检查当前二级菜单项是否有三级菜单项
+                        if ($(this).find('.nav_bottom_block_left_next_two_next_three ul li').length === 0) {
+                            // 没有三级菜单项，执行图片切换
+                            var imgId = $(this).data('img');
+                            $(".nav_bottom_block_middle ul li").hide();
+                            $("#" + imgId).show();
+                        }
+                        // 如果有三级菜单项，不做处理，交由三级菜单项的悬停事件处理
+                    },
+                    function() {
+                        // 鼠标离开二级菜单项：可选处理
+                    }
+                );
+            });
+            
+            
+            
+        </script>
+		
+		
+		<div class="body">
+			<div class="body_top">
+				<div class="body_top_block">
+					<div class="body_top_block_left">
+						<div>
+							<h3>{$title}</h3>
+						</div>
+						<div  class="body_top_block_left_bottom">
+							<video style="border-radius: 20px;object-fit: fill;" width="650" height="384" src="{dr_get_file($spxqysbzsp)}" controls="controls" poster="{dr_thumb($thumb, 650, 384, 0, 'crop')}">
+							
+							</video>
+						</div>
+					</div>
+					<div class="body_top_block_right">
+						<div class="body_top_block_right_top">
+							<ul>
+
+
+								{module module=shipinguanli catid=6 num=2 order=updatetime}
+								
+								
+								
+												<li>
+													<a href="{$t['url']}" style="display: block;text-decoration: none;">
+														<div class="body_top_block_right_top_li_left">
+															<div class="body_top_block_right_top_li_left_title">
+																<h3>{$t['title']}</h3>
+															</div>
+															<div class="body_top_block_right_top_li_left_content">
+																<div>
+																	<h6>{intval($hits)}</h6>
+																</div>
+																<div>
+																	<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_top_icon.png" alt="">
+																</div>
+															</div>
+														</div>
+														<div class="body_top_block_right_top_li_right">
+															<img src="{dr_thumb($t['thumb'], 209, 126, 0, 'crop')}" alt="">
+														</div>
+													</a>
+												</li>
+
+
+
+
+								{/module}				
+
+
+
+								
+								
+								
+							</ul>
+						</div>
+						<div class="body_top_block_right_bottom">
+							<div class="body_top_block_right_bottom_tel">
+								
+								<div class="body_top_block_right_bottom_tel_block">
+									<div>
+										<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_top_tel.png" alt="">
+									</div>
+									<div>
+										<h6>想要到厂参观，快联系豫工客服</h6>
+									</div>
+								</div>
+								
+							</div>
+							<div class="body_top_block_right_bottom_num">
+								<h3>预约考察热线:</h3><span>13837103643</span>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="body_house">
+				<div class="body_house_center">
+					<div class="body_house_title">
+						<div class="body_house_title_img">
+							<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_house.png" alt="">
+						</div>
+						<div class="body_house_title_h6">
+							<h6><a href='http://www.hnyugong.com/'>主页</a> > <a href='{dr_share_cat_value(6, 'url')}'>视频展示</a> > </h6>
+							<h6>{$title}</h6>
+						</div>
+					</div>
+					<div class="body_house_tel">
+						<div class="body_house_tel_img">
+							
+						</div>
+						<div class="body_house_tel_h3">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			<div class="body_newsearch">
+				<div class="body_newsearch_center" style="box-sizing: border-box;">
+					<form  class="search-form"  action="/index.php" method="get">
+						<input type="hidden" name="s" value="shipinguanli">
+						<input type="hidden" name="c" value="search">
+						<input type="text" placeholder="请输入关键字 查看更多视频" name="keyword" style="float: left;border: 1px solid #CCCCCC;padding: 6px 12px;font-size: 14px;width: 370px;height: 34px;box-sizing: border-box;">
+						<input type="submit" value="搜索"  style="float: left;border: none;height: 34px;width: 64px;background-color: #333;color: #fff;font-size: 14px;padding: 0;" />
+				   </form>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			<div class="body_match">
+				<div class="body_match_center">
+					<div class="body_match_block">
+						<div class="body_match_block_title">
+							<div>
+								<h2>视频介绍</h2>
+							</div>
+							<div>
+								<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_match_title_img.png" alt="">
+							</div>
+						</div>
+						<div class="body_match_block_content">
+							<p>
+								{$spxqyzbspjs} 
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div style="width: 1200px;min-height: 1630px;margin: 0 auto;overflow: hidden;">
+				<div style="width: 880px;min-height: 1630px;overflow: hidden;margin-left: 33px;float: left;">
+
+					<div class="body_image">
+	<div class="body_image_center" style="padding-left: 0;">
+		<div class="body_image_block">
+			<div class="body_image_block_title">
+				<div>
+					<h2>
+						图片展示</h2>
+				</div>
+				<div>
+				<img alt="" src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_image_title_img.png" /></div>
+			</div>
+			<div class="body_image_block_content" style="padding-left: 0;">
+
+
+				{$content}    
+
+
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+
+
+				</div>
+				<div style="width: 280px;float: right;">
+					
+
+
+					<div class="body_sidebar">
+						<div class="body_sidebar_center">
+							<div class="body_sidebar_block">
+								 <div class="body_sidebar_block_title">
+								 	<div>
+										<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_sidebar_icon.png" alt="">
+									</div>
+									<div>
+										<h3>热销产品</h3>
+									</div>
+								 </div>
+								 <div class="body_sidebar_block_content">
+								 	<ul>
+
+
+
+										{module module=chanpinguanli catid=12 order=updatetime num=3} 
+
+										
+													<li>
+														<a href="{$t['url']}" style="display: block;text-decoration: none;">
+															<div>
+																<img src="{dr_thumb($t['thumb'], 280, 215, 0, 'crop')}" alt="">
+															</div>
+															<div>
+																<h6>{$t['title']}</h6>
+															</div>
+														</a>
+													</li>
+
+
+										{/module}
+
+
+									</ul>
+								 </div>
+							</div>
+						</div>
+					</div>
+					
+					
+					<div class="body_sidebar2">
+						<div class="body_sidebar2_center">
+							<div class="body_sidebar2_block">
+								 <div class="body_sidebar2_block_title">
+								 	<div>
+										<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_sidebar2_icon.png" alt="">
+									</div>
+									<div>
+										<h3>更多推荐</h3>
+									</div>
+								 </div>
+								 <div class="body_sidebar2_block_content">
+								 	<ul>
+
+										{module module=chanpinguanli catid=12 order=updatetime num=4,9} 
+
+														<li>
+															<a href="{$t['url']}" style="display: block;text-decoration: none;">
+																<div class="body_sidebar2_block_content_li">
+																	<h6>{dr_strcut($t['title'], 9, '')}</h6>
+																</div>
+															</a>
+														</li>
+
+										{/module}
+
+
+									</ul>
+								 </div>
+							</div>
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			<div class="body_video">
+				<div class="body_video_center">
+					<div class="body_video_title2">
+						<div class="body_video_title_left">
+							<div class="body_video_title_h3">
+								<h3>视频展示</h3>
+							</div>
+							<div class="body_video_title_img">
+								<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_video_title_img.png" alt="">
+							</div>
+						</div>
+						<div class="body_video_title_right2">
+							<div class="body_video_title_right_block2">
+								<a href="{dr_share_cat_value(6, 'url')}">
+									<div>
+										<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_video_book.png" alt="">
+									</div>
+									<div>
+										<h6>
+											查看更多
+										</h6>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="body_video_content">
+						<div class="swiper-container3">
+							<div class="swiper-wrapper">
+
+
+
+
+								{module module=shipinguanli catid=6 order=updatetime} 
+								
+								
+								      <div class="swiper-slide">
+									  	<a href="{$t['url']}" style="display: block;text-decoration: none;">
+									  		 <div class="body_video_content_img">
+											  <img style="margin: 0;" src="{dr_thumb($t['thumb'], 550, 360, 0, 'crop')}" alt="">
+										  </div>
+										  <div class="body_video_content_h6">
+											  <center>
+												  <h6>{$t['title']}</h6>
+											  </center>
+										  </div>
+									  	</a>
+									  </div>
+
+								{/module}
+							  
+							  
+							</div>
+						</div>
+					
+						<div class="swiper-button-next">
+							  <img src="{THEME_PATH}assets/newdaguanwang/images/video_article/right.png" alt="">
+						</div>
+						<div class="swiper-button-prev">
+							  <img src="{THEME_PATH}assets/newdaguanwang/images/video_article/left.png" alt="">
+						</div>
+					</div>
+					<div class="body_video_bottom">
+						<!-- <center>
+							<a href="/video_list/index.html">
+								<div>
+									<h3></h3>
+								</div>
+							</a>
+						</center> -->
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			<div class="body_message">
+				<div class="body_message_center">
+					<div class="body_message_left">
+						<div class="body_message_title">
+							<div>
+								<h3>
+									在线留言
+								</h3>
+							</div>
+							<div>
+								<h6>
+									留言信息，豫工为您免费定制专属设备
+								</h6>
+							</div>
+						</div>
+						<div class="body_message_form">
+							<form action="" enctype="" method="">
+								<div class="form_top">
+								        <input type='text' name='cp' id='cp3' style='display:none' value='河南豫工大官网视频详情页中间1'/>
+										<div class="body_message_name">
+											<label>姓名:</label>
+											<input type="text" class="form_name" name='name' id='name3'>
+										</div>
+										<div class="body_message_tel">
+											<label>电话:</label>
+											<input type="text" class="form_tel" name='telephone' id='tel3'>
+										</div>
+										<div  class="body_message_textarea">
+											<label class="liuyan">留言:</label>
+											<textarea rows="4" cols="47" name='ycontent' id='ly3'></textarea>
+										</div>
+								</div>
+								<div>
+										<div>
+											<div class="submit" id="jisuan3">
+												<input type="button" name="submit" value="提交"/>
+											</div>
+										</div>   
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="body_message_right">
+						<img src="{THEME_PATH}assets/newdaguanwang/images/video_article/body_message_image.png" alt="">
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+		
+		<!--表单的跨域提交开始-->
+                
+                
+
+            
+
+                
+                
+                <script>
+                
+                    $(function(){
+                        
+                        $('#jisuan3').click(function(){
+                            
+                            
+                            
+                            
+                            var newTitle = document.getElementById("cp3").value;
+                            
+                            var newAuthor = document.getElementById("name3").value;
+                            
+                            var newDianhua = document.getElementById("tel3").value;
+                            
+                            var newWangzhi = window.location.href;
+                            
+                            var newLiuyan = document.getElementById("ly3").value;
+                            
+                            var newData = "is_ajax=1&data[title]="+newTitle+"&data[author]="+newAuthor+"&data[dianhua]="+newDianhua+"&data[wangzhi]="+newWangzhi+"&data[liuyan]="+newLiuyan+"";
+                            
+                            
+                            
+                            
+                            //console.log(newTitle);
+                            
+                            //console.log(newAuthor);
+                            
+                            //console.log(newDianhua);
+                            
+                            //console.log(newWangzhi);
+                        
+                            //console.log(newLiuyan);
+                            
+                            
+                            if(newDianhua){
+                                
+                                
+                                
+                                
+                                //var newReg = /^[0-9]{11}$/;
+                                
+                                
+                                if((typeof(newDianhua) == "string")&&(newDianhua.length == 11)){
+                                    
+                                    
+                                    $.ajax({
+                                        type: "post",
+                                        url: "https://kuayu2.hnyugong.com/index.php?v=1&appid=1&appsecret=PHPCMF32C04A005323F&s=form&c=biaodan12&m=post",
+                                        data: newData,
+                                        header: {
+                                                'Content-Type': 'application/x-www-form-urlencoded',
+                                        },
+                                        //dataType: "json",
+                                        success: function(data){
+                                            
+                                            console.log(data.code);
+                                            console.log(data.msg);
+                                            
+                                            if(data.code == 0){
+                                                
+                                                //layer.alert('见到你真的很高兴', {icon: 6});
+                                                
+                                            }else if(data.code > 0){
+                                                
+                                                //layer.alert('见到你真的很高兴', {icon: 6});
+                                                
+                                                layer.alert('恭喜报名成功！稍后产品经理会与您联系',{icon: 1});
+                                                
+                                                
+                                                
+                                                document.getElementById("name3").value = "";
+                                                
+                                                document.getElementById("tel3").value = "";
+                                                
+                                                document.getElementById("ly3").value = "";
+                                                
+                                            }else{
+                                                
+                                                
+                                            }
+                                                    
+                                        },
+                                        error:function(XMLHttpRequest, textstatus,errorThrown){
+                                            debugger
+                                            // 状态码
+                                            console.log(XMLHttpRequest.status);
+                                            // 状态
+                                            console.log(XMLHttpRequest.readyState);
+                                            // 错误信息
+                                            console.log(textstatus);
+                                            ___hideLoading();
+                                            if(XMLHttpRequest.readyState==0){
+                                                // 对应登录超时问题，直接酷到登录页面
+                                                location.href='../Login.action';
+                                            }else{
+                                                $.messager.alert("提示'，系统内部错误，请联系管理员处理!",'info');
+                                            }
+                                        }
+                                    });
+                                    
+                                    
+                                    
+                                    
+                                }else{
+                                    
+                                    
+                                    layer.msg('电话号码不是11位');
+                                    
+                                    
+                                    
+                                }
+                                
+                                
+                                
+                                
+                            
+                            
+                                
+                                
+                            }else{
+                                
+                                layer.msg('电话不能为空');
+                                
+                                
+                            }
+                            
+
+                            
+                            
+                            
+                            
+                            
+                            
+                        });
+                    });
+                            
+                    
+                </script>
+                    
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+
+        <!--表单的跨域提交结束-->    
+
+		
+		
+		
+		<script>
+			var swiper = new Swiper('.swiper-container', {
+			  slidesPerView: 1,
+			  spaceBetween: 30,
+			  navigation: {
+				nextEl: '.body_product_center .swiper-button-next',
+				prevEl: '.body_product_center .swiper-button-prev',
+			  },
+			});
+		</script>
+		<script type="text/javascript">
+			$(".body_top_block_right_content li").mouseover(function(){
+				$(".body_top_block_right_content li").eq($(this).index()).addClass("active_blue").siblings().removeClass("active_blue");
+			})
+		</script>
+		<script>
+			var swiper3 = new Swiper('.swiper-container3', {
+			  slidesPerView: 2,
+			  spaceBetween: 30,
+			  navigation: {
+				nextEl: '.body_video_content .swiper-button-next',
+				prevEl: '.body_video_content .swiper-button-prev',
+			  },
+			});
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		<div class="footer">
+			{template "footer.html"}
+</div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1477cbe4beb08b8aee40baefeb131573";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+	</div>
+
+
+
+
+
+
+
+
+<div class="m_container m_body_hidden">
+		<div style="0.67rem">
+	
+        </div>
+
+        <div class="m_header m_body_hidden">
+        	<div class="m_header_center">
+        		<div class="m_header_logo">
+        			<a href="/" style="display: block;text-decoration: none;">
+        				<img src="{THEME_PATH}assets/newdaguanwang/images/index/m_header_logo.png" alt="">
+        			</a>
+        		</div>
+        		<div class="m_header_tel">
+        			<div class="m_header_tel_image">
+        				<img src="{THEME_PATH}assets/newdaguanwang/images/index/m_header_tel.png" alt="">
+        			</div>
+        			<div class="m_header_tel_image_font">
+        				<h3>全国咨询热线</h3>
+        				<a href="tel:13837103643" style="display: block;text-decoration: none;">
+        					<h4 style="margin-top: -0.06rem;
+            display: block;">138-3710-3643</h4>
+        				</a>
+        			</div>
+        		</div>
+        		<div class="m_header_nav">
+        			<img src="{THEME_PATH}assets/newdaguanwang/images/index/m_header_nav.png" alt="">
+        		</div>
+        	</div>
+        </div>
+
+
+        {template "m_nav.html"}
+
+
+		
+		<div style="clear: both;"></div>
+		
+		<div style="height: 1rem;"></div>
+		
+		<div class="m_body">
+			
+			
+			<div class="m_body_core">
+				<div class="m_body_core_block">
+					<div class="m_body_core_block_h3">
+						<h3>视频展示</h3>
+					</div>
+					<div class="m_body_core_block_img">
+						<img src="{THEME_PATH}assets/newdaguanwang/images/service/body_core_title_img.png" alt="">
+					</div>
+					<div class="m_body_core_block_p">
+						<p>
+							
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="m_body_title">
+				<div class="m_body_title_block">
+					<h3>
+						{$title} 
+					</h3>
+				</div>
+			</div>
+			
+			
+			<div class="m_body_time">
+				<div class="m_body_time_block">
+					<h6>
+						{dr_date($_inputtime, 'Y-m-d  H:i')} 
+					</h6>
+				</div>
+			</div>
+			
+			<div class="m_body_video">
+				<div class="m_body_video_block">
+					<video style="object-fit: fill;" src="{dr_get_file($spxqysbzsp)}" controls="controls" poster="{dr_thumb($thumb, 347, 165, 0, 'crop')}">
+						
+					</video>
+				</div>
+			</div>
+			
+			
+			<div class="m_body_video_intro">
+				<div class="m_body_video_intro_block">
+					<p>
+						{$spxqyzbspjs}
+					</p>
+				</div>
+			</div>
+			
+			
+			<div class="m_body_content">
+				<div class="m_body_content_block">
+
+					{$content}
+
+				</div>	
+			</div>
+			
+			
+						<script>
+                $(document).ready(function() {
+                    // 获取 .part05_middle 内的所有 img 元素
+                    var $span = $(".m_body_content_block p");
+            
+                    // 遍历所有找到的 img 元素
+                    $span['each'](function() {
+                        // 移除 style 属性
+                        $(this).removeAttr('style');
+                    });
+            
+                    
+                });
+            </script>
+			
+			
+			<script>
+                $(document).ready(function() {
+                    // 获取 .part05_middle 内的所有 img 元素
+                    var $span = $(".m_body_content_block span");
+            
+                    // 遍历所有找到的 img 元素
+                    $span['each'](function() {
+                        // 移除 style 属性
+                        $(this).removeAttr('style');
+                    });
+            
+                    
+                });
+            </script>
+            
+            <script>
+                $(document).ready(function() {
+                    // 获取 .part05_middle 内的所有 img 元素
+                    var $images = $(".m_body_content_block img");
+            
+                    // 遍历所有找到的 img 元素
+                    $images['each'](function() {
+                        // 移除 style 属性
+                        $(this).removeAttr('style');
+                        $(this).attr("alt","图片");
+                    });
+            
+                    //console.log('已移除 .part05_middle 内所有 img 标签的 style 属性');
+                    
+                });
+            </script>
+            
+            
+            <script type="text/javascript">
+        			
+			    $(function(){
+                  $(".m_body_content_block img").each(function(i){
+                    var img = $(this);
+                    var newImg = $("<img/>");
+                    newImg.attr("src", img.attr("src")).on('load', function() {
+                      var realWidth = this.width;
+                      var realHeight = this.height;
+                      var needHeight = (realHeight * 5.4 / realWidth) + 'rem';
+                      img.css({"width": '5.4rem', "height": needHeight});
+                    });
+                  });
+                });
+			
+
+			</script>
+			
+			
+			
+
+            <script>
+                (function() {
+                    // 获取包含内容的div
+                    let contentDiv = document.querySelector('.m_body_content_block');
+                    if (contentDiv) {
+                        // 获取div中的所有p标签（使用Array.from创建数组，以便安全地删除元素）
+                        let pElements = Array.from(contentDiv.querySelectorAll('p'));
+                        pElements.forEach(function(p) {
+                            // 检查p标签是否包含img标签
+                            let hasImg = p.querySelector('img') !== null;
+                
+                            // 创建一个临时的DOM元素
+                            let tempDiv = document.createElement('div');
+                            // 将p标签的innerHTML赋给临时元素
+                            tempDiv.innerHTML = p.innerHTML;
+                            // 获取临时元素的纯文本内容，移除空白字符
+                            let text = tempDiv.textContent.replace(/\s+/g, '');
+                            // 检查是否包含中文汉字或英文字母
+                            let containsText = /[\u4E00-\u9FFFa-zA-Z]+/.test(text);
+                
+                            // 如果不包含中文汉字或英文字母，且不包含img标签，移除p标签
+                            if (!containsText && !hasImg) {
+                                // 从DOM中移除该p标签
+                                p.parentNode.removeChild(p);
+                                console.log('移除p标签：', p);
+                            }
+                            // 否则，保留p标签（有中文或英文，或包含img标签）
+                        });
+                    }
+                })();
+            </script>
+			
+			
+			
+		</div>
+	   <!--</div>-->
+    <!--   </div>-->
+       <br />
+
+			<!--	</div>-->
+			<!--</div>-->
+			
+			
+			
+			
+			<div class="m_body_tab  m_body_hidden">
+				<div class="m_body_tab_block">
+					<div class="m_body_tab_block_pre">
+						<h3>
+							上一篇：{if $prev_page}<a href="{$prev_page.url}">{$prev_page.title}</a>{else}没有了{/if}
+						</h3>
+					</div>
+					<div class="m_body_tab_block_next">
+						<h3>
+							下一篇：{if $next_page}<a href="{$next_page.url}">{$next_page.title}</a>{else}没有了{/if}
+						</h3>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+		
+			
+			
+			<div class="m_consult">
+				<div class="m_consult_center">
+					<div class="m_consult_left">
+						<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="display: block;text-decoration: none;">
+							<div class="m_consult_left_img">
+								<img src="{THEME_PATH}assets/newdaguanwang/images/index/m_consult_icon_02.png" alt="">
+							</div>
+							<div class="m_consult_left_h3">
+								<h3>设备咨询</h3>
+							</div>
+						</a>
+					</div>
+					<div class="m_consult_middle">
+						<a href="tel:13837103643" style="display: block;text-decoration: none;">
+							<div class="m_consult_middle_img">
+								<img src="{THEME_PATH}assets/newdaguanwang/images/index/m_consult_icon_01.png" alt="">
+							</div>
+						</a>
+					</div>
+					<div class="m_consult_right">
+						<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="display: block;text-decoration: none;">
+							<div class="m_consult_right_img">
+								<img src="{THEME_PATH}assets/newdaguanwang/images/index/m_consult_icon_03.png" alt="">
+							</div>
+							<div class="m_consult_right_h3">
+								<h3>在线咨询</h3>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		<!--</div>-->
+		
+		
+		
+            {template "m_footer.html"}
+	</div>
+
+
+
+
+</body>
+</html>
+
+
+		
+		
+		

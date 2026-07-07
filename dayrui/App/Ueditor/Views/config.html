@@ -1,0 +1,127 @@
+{template "header.html"}
+
+<form action="" class="form-horizontal" method="post" name="myform" id="myform">
+    {$form}
+    <div class="portlet bordered light myfbody">
+        <div class="portlet-title tabbable-line">
+            <ul class="nav nav-tabs" style="float:left;">
+                <li class="{if $page==0}active{/if}">
+                    <a href="#tab_0" data-toggle="tab" onclick="$('#dr_page').val('0')"> <i class="fa fa-cog"></i> {dr_lang('插件设置')} </a>
+                </li>
+            </ul>
+        </div>
+        <div class="portlet-body">
+            <div class="tab-content">
+                <div class="tab-pane {if $page==0}active{/if}" id="tab_0">
+                     <div class="form-body">
+
+                        <link href="{THEME_PATH}assets/global/plugins/codemirror/lib/codemirror.css" rel="stylesheet" type="text/css" />
+                        <link href="{THEME_PATH}assets/global/plugins/codemirror/theme/neat.css" rel="stylesheet" type="text/css" />
+
+                        <script src="{THEME_PATH}assets/global/plugins/codemirror/lib/codemirror.js" type="text/javascript"></script>
+                        <script src="{THEME_PATH}assets/global/plugins/codemirror/mode/javascript/javascript.js" type="text/javascript"></script>
+                        <script src="{THEME_PATH}assets/global/plugins/codemirror/addon/display/autorefresh.js" type="text/javascript"></script>
+                         <div class="form-group">
+                             <label class="col-md-2 control-label">一键开关</label>
+                             <div class="col-md-9">
+                                 <label><button type="button" onclick="dr_iframe_show('{dr_lang('一键启用')}', '{dr_url('ueditor/config/set_index')}&id=1')" class="btn dark"> <i class="fa fa-th-large"></i> {dr_lang('设置全站使用百度编辑器')} </button></label>
+                                 <label><button type="button" onclick="dr_iframe_show('{dr_lang('一键还原')}', '{dr_url('ueditor/config/set_index')}&id=0')" class="btn blue"> <i class="fa fa-th-large"></i> {dr_lang('全站还原为系统编辑器')} </button></label>
+
+
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <label class="col-md-2 control-label">{dr_lang('百度地图Api-AK')}</label>
+                             <div class="col-md-5">
+                                 <label><input class="form-control input-large" id="bdak" type="text" name="data[ak]" value="{htmlspecialchars((string)$data['ak'])}"  ></label>
+                                 <label><a class="btn btn-sm blue" href="javascript:dr_help(584);"> {dr_lang('立即申请')} </a></label>
+                                 <span class="help-block">{dr_lang('用于百度地图调用')}</span>
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <label class="col-md-2 control-label">{dr_lang('更新百度地图')}</label>
+                             <div class="col-md-5">
+                                  <label><a class="btn btn-sm blue" href="javascript:dr_alldb_edit();"> {dr_lang('立即更新')} </a></label>
+                                    <span class="help-block">{dr_lang('当编辑器已经存在动态地图时，需要更新AK值到已有的内容中')}</span>
+                             </div>
+                         </div>
+
+                         <div class="form-group">
+                             <label class="col-md-2 control-label">{dr_lang('同步到多个站')}</label>
+                             <div class="col-md-5">
+                                  <label><a class="btn btn-sm blue" href="javascript:dr_alldb_edit2();"> {dr_lang('立即更新')} </a></label>
+                                    <span class="help-block">{dr_lang('将百度编辑器文件同步到多站域名下的api目录中')}</span>
+                             </div>
+                         </div>
+
+
+
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">{dr_lang('编辑器配置文件')}</label>
+                            <div class="col-md-9" style="color:green" >
+                                <div class="well well2">
+                                   /api/ueditor/php/config.php
+                                </div>
+                                <textarea id="file_code_ueditor" class="form-control">{dr_code2html(file_get_contents(ROOTPATH.'api/ueditor/php/config.php'))}</textarea>
+                                <div class="note note-danger margin-top-30">
+                                    {dr_lang('若需变更此类参数，需要在服务器中找的此文件做对应的修改操作')}
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            jQuery(document).ready(function() {
+                                var myTextArea = document.getElementById('file_code_ueditor');
+                                var myCodeMirror = CodeMirror.fromTextArea(myTextArea, {
+                                    lineNumbers: true,
+                                    matchBrackets: true,
+                                    styleActiveLine: true,
+                                    theme: "neat",
+                                    mode: 'javascript',
+                                    lint: true,
+                                    readOnly: true,
+                                    autoRefresh: true
+                                });
+                                myCodeMirror.setSize(null, 300);
+                            });
+                            function dr_alldb_edit() {
+                                {if !dr_is_app('ctool')}
+                                    dr_tips(0, '需要安装【内容维护工具】插件', -1);
+                                {else}
+                                var url = '{dr_url('ctool/module_content/dball_edit')}&t1='+encodeURIComponent('/api/ueditor/dialogs/map/show.html#')+'&t2='+encodeURIComponent('/api/ueditor/dialogs/map/show.html#ak='+$('#bdak').val()+'&');
+                                dr_iframe_show('{dr_lang('批量操作')}', url);
+                                {/if}
+                            }
+                            function dr_alldb_edit2() {
+                                $.ajax({
+                                    type: "GET",
+                                    dataType: "json",
+                                    url: "{SELF}?c=api&m=cache&id=update_ueditor",
+                                    success: function (json) {
+                                        dr_tips(json.code, json.msg)
+                                    },
+                                    error: function(HttpRequest, ajax, thrownError) {
+                                        dr_ajax_alert_error(HttpRequest, ajax, thrownError);
+                                    }
+                                });
+                            }
+                        </script>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portlet-body form myfooter">
+            <div class="form-actions text-center">
+                <button type="button" onclick="dr_ajax_submit('{dr_now_url()}&page='+$('#dr_page').val(), 'myform', '2000')" class="btn green"> <i class="fa fa-save"></i> {dr_lang('保存')}</button>
+            </div>
+        </div>
+     
+    </div>
+</form>
+
+
+
+{template "footer.html"}

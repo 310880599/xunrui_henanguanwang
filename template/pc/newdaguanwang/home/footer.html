@@ -1,0 +1,175 @@
+<div class="footer_nav">
+    <div class="footer_nav_center">
+        <div class="footer_nav_left">
+            <ul>
+                <li>
+                    <a href="http://www.yglmjq.com/">
+                        <h3>
+                            路面施工设备
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>
+                            环保系列
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ygqljq.com/">
+                        <h3>
+                            桥梁预应力施工
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ygsdjq.com/">
+                        <h3>
+                            隧道喷浆支护
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>
+                            注浆泵类施工
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="http://www.ygpcjq.com/">
+                        <h3>
+                            切割破拆
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>
+                            钢筋钢管加工
+                        </h3>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <h3>
+                            工程钻机
+                        </h3>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_nav_right">
+             <form  class="search-form"  action="/index.php" method="get">
+                <input type="hidden" name="s" value="chanpinguanli">
+                <input type="hidden" name="c" value="search">
+                  <input type="text" placeholder="快速搜索" name="keyword" class="search_text" style="background-color: #006eff;border: none;color: white;">
+                  <button type="submit">
+                      <img src="{THEME_PATH}assets/newdaguanwang/images/about/search.png" alt="">
+                  </button>
+              </form>
+        </div>
+    </div>
+</div>
+<div class="footer_intro">
+    <div class="footer_intro_center">
+        <div class="footer_intro_left">
+            <ul>
+                <li>
+                    <div class="footer_intro_left_font">
+                        <h2>产品推荐</h2>
+                        <img src="{THEME_PATH}assets/newdaguanwang/images/about/triangle.png" alt="">
+                    </div>
+                    <div class="footer_intro_left_line">
+                        <img src="{THEME_PATH}assets/newdaguanwang/images/about/short_line.png" alt="">
+                    </div>
+                </li>
+
+
+
+                {module module=chanpinguanli catid=12 order=updatetime num=5} 
+                
+                            <li>
+                                <a href="{$t['url']}" style="display: block;text-decoration: none;">
+                                    <div class="footer_intro_left_font">
+                                        <h6>{$t['title']}</h6>
+                                    </div>
+                                    <div class="footer_intro_left_line">
+                                        <img src="{THEME_PATH}assets/newdaguanwang/images/about/short_line.png" alt="">
+                                    </div>
+                                </a>
+                            </li>
+
+                {/module}
+                
+            
+            </ul>
+        </div>
+        <div class="footer_intro_middle">
+            <div class="footer_intro_middle_name">
+                <h2>河南豫工机械设备有限公司</h2>
+                <img src="{THEME_PATH}assets/newdaguanwang/images/about/long_line.png" alt="">
+            </div>
+            <div class="footer_intro_middle_welcome">
+                <h3>热忱欢迎社会各界与我们联系，我们全天恭候您的垂询!</h3>
+            </div>
+            <div class="footer_intro_middle_mail">
+                <img src="{THEME_PATH}assets/newdaguanwang/images/about/footer_icon_01.png" alt="">
+                <h3>邮箱: 2837479786@qq.com</h3>
+            </div>
+            <div class="footer_intro_middle_tel">
+                <img src="{THEME_PATH}assets/newdaguanwang/images/about/footer_icon_02.png" alt="">
+                <h3>电话: 138-3710-3643</h3>
+            </div>
+            <div class="footer_intro_middle_address">
+                <img src="{THEME_PATH}assets/newdaguanwang/images/about/footer_icon_03.png" alt="">
+                <h3>地址:郑州•二七区京广南路8号京莎广场B座26/27F</h3>
+            </div>
+            <div class="footer_intro_middle_copy">
+                <a href="https://beian.miit.gov.cn" style="display: block;text-decoration: none;">
+                    <h3>河南豫工机械设备有限公司 版权所有 备案号：豫ICP备2025108588号-2</h3>
+                </a>
+            </div>
+        </div>
+        <div class="footer_intro_right">
+            <ul>
+                <li>
+                    <div class="footer_intro_right_font">
+                        <h2>案例推荐</h2>
+                    </div>
+                    <div class="footer_intro_right_line">
+                        <img src="{THEME_PATH}assets/newdaguanwang/images/about/short_line.png" alt="">
+                    </div>
+                </li>
+
+
+
+
+                        {module module=anliguanli catid=10 order=updatetime num=5} 
+
+
+
+                                    
+                                    <li>
+                                        <a href="{$t['url']}" style="display: block;text-decoration: none;">
+                                            <div class="footer_intro_right_font">
+                                                <h6>{$t['title']}</h6>
+                                            </div>
+                                            <div class="footer_intro_right_line">
+                                                <img src="{THEME_PATH}assets/newdaguanwang/images/about/short_line.png" alt="">
+                                            </div>
+                                        </a>
+                                    </li>
+
+
+
+
+                        {/module}
+
+
+                
+            </ul>
+        </div>
+    </div>
+</div>

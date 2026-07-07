@@ -1,0 +1,38 @@
+.m_link{width: 6.4rem;height: 7rem;background-color: #FFFFFF;position: fixed;z-index: 999;top: 0.67rem;}
+
+.m_link li{width: 6.4rem;height: 0.85rem;border-top: 1px solid #eee;}
+
+.m_link li a{width: 6.4rem;height: 0.85rem;box-sizing: border-box;padding-left: 0.3rem;padding-right: 0.3rem;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: space-between;align-items: center;text-decoration: none;}
+
+.m_link_li_h3{width: 2rem;height: 0.4rem;}
+
+.m_link_li_h3 h3{font-size: 0.3rem;font-weight: normal;}
+
+.m_link_li_img{width: 0.2rem;height: 0.36rem;}
+
+.m_link_li_img img{width: 10px;height: 18px;}
+
+
+/***手机端头部代码***/
+/**********m_header*************/
+.m_header{width: 6.4rem;height: 0.67rem;position: fixed;top: 0;z-index: 999;background-color: #FFFFFF;}
+
+.m_header_center{width: 6.01rem;height: 0.67rem;margin-left: 0.21rem;margin-right: 0.18rem;display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: space-between;align-items: center;}
+
+.m_header_logo{}
+.m_header_logo img{width: 1.57rem;height: 0.41rem;}
+
+.m_header_tel{display: flex;flex-direction: row;flex-wrap: nowrap;justify-content: center;align-items: center;margin-right: 1.5rem;}
+
+.m_header_tel_image{margin-right: 0.06rem;}
+.m_header_tel_image img{width: 0.41rem;height: 0.41rem;}
+
+.m_header_tel_image_font{}
+.m_header_tel_image_font h3{font-size: 0.2rem;font-weight: normal;}
+.m_header_tel_image_font h4{font-size: 0.24rem;color: #2958d4;font-weight: bold;font-family: myfont1;}
+
+
+.m_header_nav{}
+.m_header_nav img{width: 0.26rem;height: 0.22rem;}
+
+.m_link_guanbi{width: 0.5rem;height: 0.5rem;position: absolute;left: 50%;bottom: -0.5rem;transform: translateX(-50%);z-index: 999;}

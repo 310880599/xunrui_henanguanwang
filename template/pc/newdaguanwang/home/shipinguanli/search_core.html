@@ -1,0 +1,113 @@
+
+<link href="{HOME_THEME_PATH}pc/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+<link href="{HOME_THEME_PATH}pc/css/style.bundle.css" rel="stylesheet" type="text/css" />
+<link href="{THEME_PATH}assets/icon/css/icon.css" rel="stylesheet" type="text/css" />
+
+<div class="row g-5 g-xl-10 mb-5 mb-xl-10 mt-5">
+
+    <!--begin::Col-->
+    <div class="col-xl-8 mt-0">
+        <!--begin::Table widget 14-->
+        <div class="card card-flush h-md-100">
+
+            <!--begin::Body-->
+            <div class="card-body pt-6">
+                
+
+                    <!--调用MOD_DIR模块的数据 id和total和order参数(本页面固有参数) page=1标示开启分页 urlrule分页地址规则 pagesize每页数量-->
+                    {search module=MOD_DIR id=$searchid total=$sototal order=$params.order catid=$catid page=1 pagesize=12 urlrule=$urlrule}
+                    <!--begin::Col-->
+                    <div class=" d-flex align-items-center pt-5">
+                        <!--begin::Icon-->
+                        <div class="mobile-hidden d-flex h-120px w-120px h-lg-120px w-lg-120px flex-shrink-0 flex-center position-relative align-self-start align-self-lg-center mt-3 mt-lg-0">
+                            <div class="symbol symbol-90px symbol-2by3 me-4">
+                                <div class="symbol-label" style="background-image: url('{dr_thumb($t.thumb)}')"></div>
+                            </div>
+                        </div>
+                        <!--end::Icon-->
+
+                        <!--begin::Description-->
+                        <div class="ms-6">
+                            <h5 class="article-title">
+                                <a href="{$t.url}" class="text-dark">{$t.title}</a>
+                            </h5>
+                            <!-- <p class="list-unstyled text-gray-600 fw-semibold fs-6 p-0 m-0">
+                                {dr_strcut($t.description, 80)}
+                            </p>
+                            <div class="article-tag">
+                                {php $kws=dr_get_content_kws($t.keywords);}
+                                {if $kws}
+                                {php $kws=dr_arraycut($kws, 3);}
+                                {loop $kws $name $url}
+                                <a href="{$url}" class="badge badge-light-primary fw-bold my-2">{$name}</a>
+                                {/loop}
+                                {/if}
+
+                                <span class="text-muted   mx-2 fs-7"><i class="fa fa-calendar"></i> {$t.updatetime}</span>
+                                <span class="text-muted  mx-2  fs-7" itemprop="comments"><i class="fa fa-comments"></i> {intval($t.comments)} 评论</span>
+                                <span class="text-muted  mx-2  fs-7" itemprop="views" title="浏览次数"><i class="fa fa-eye"></i> {intval($t.hits)} 浏览</span>
+                            </div>  -->
+                        </div>
+                        <!--end::Description-->
+                    </div>
+                    <!--end::Col-->
+                    {/search}
+
+                    <div class="row ">
+                        <div class="xrpagination mt-5">
+                            {$pages}
+                        </div>
+                    </div>
+
+
+
+            </div>
+            <!--end: Card Body-->
+        </div>
+        <!--end::Table widget 14-->
+    </div>
+    <!--end::Col-->
+
+</div>
+
+
+
+
+
+
+<div class="body_list">
+    <div class="body_list_center">
+        <div class="body_list_middle">
+            <ul>
+
+
+
+                {search module=MOD_DIR id=$searchid total=$sototal order=$params.order catid=$catid page=1 pagesize=12 urlrule=$urlrule}
+                            
+                            <li>
+                                
+                                <a href="{$t['url']}" style="display: block;text-decoration: none;">
+                                    <div class="body_list_middle_li_top">
+                                        <div>
+                                            <img src="{dr_thumb($t['thumb'], 380, 260, 0, 'crop')}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="body_list_middle_li_bottom">
+                                        <div>
+                                            <h6>{$t['title']}</h6>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                            </li>
+                
+
+                {/search}
+                
+                
+            </ul>
+        </div>
+        <div class="body_list_bottom dede_pages">
+            {$pages}
+        </div>
+    </div>

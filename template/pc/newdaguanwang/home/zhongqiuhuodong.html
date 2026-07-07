@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<title>豫工机械</title>
+		<link rel="stylesheet" href="{THEME_PATH}assets/newdaguanwang/css/zhongqiuhuodong.css">
+		<link rel="stylesheet" href="{THEME_PATH}assets/newdaguanwang/css/swiper.min.css">
+		<link rel="stylesheet" href="{THEME_PATH}assets/newdaguanwang/css/animate.css">
+		<link rel="stylesheet" href="{THEME_PATH}assets/newdaguanwang/css/animate.min.css">
+		<script type="text/javascript" src="{THEME_PATH}assets/newdaguanwang/js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="{THEME_PATH}assets/newdaguanwang/js/swiper.min.js"></script>
+		<script type="text/javascript" src="{THEME_PATH}assets/newdaguanwang/js/wow.min.js"></script>
+		<script src="{THEME_PATH}assets/newdaguanwang/js/index.js"></script>
+		<script src="{THEME_PATH}assets/newdaguanwang/js/scroll.js"></script>
+	    <script type="text/javascript" src="layer/layer.js"></script>
+
+		<!-- <script>
+			var setStyle = function (cssArr) {
+				var i = 0,
+					len = cssArr.length;
+				for (i; i < len; i++) {
+					document.write('<link href="' + cssArr[i] + '" type="text/css" rel=stylesheet>');
+				}
+			};
+		
+			var is_mobi = navigator.userAgent.toLowerCase().match(
+				/(ipod|ipad|iphone|android|coolpad|mmp|smartphone|midp|wap|xoom|symbian|j2me|blackberry|wince)/i) != null;
+			if (is_mobi) {
+				// window.location.href = "手机端";
+				setStyle(['http://www.yglmjq.com/static/assets/lumiandaguanwang/{THEME_PATH}assets/newdaguanwang/css/contact_us/style.min.css']);
+				//setStyle(['{THEME_PATH}assets/newdaguanwang/css/news_article/index.css']);
+		
+			} else {
+				// window.location.href = "PC端";
+				setStyle(['http://www.yglmjq.com/static/assets/lumiandaguanwang/{THEME_PATH}assets/newdaguanwang/css/contact_us/index.css']);
+			}
+		</script>	 -->
+
+
+		<script type="text/javascript">
+			function browserRedirect() {
+				var sUserAgent = navigator.userAgent.toLowerCase();
+				if (/ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/.test(sUserAgent)) {
+					//跳转移动端页面
+					console.log("移动");
+					
+					
+					//window.location.href = "file:///F:/%E5%9C%A8%E5%AE%B6%E5%8A%9E%E5%85%AC%E8%BD%AC%E7%A7%BB/WWW/lumianxiliewangzhancuxiaomobile/lmjxnzcx.html";
+		
+		// 			(function (doc, win) {
+		// 				var docEl = doc.documentElement,
+		// 						resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+		// 						recalc = function () {
+		// 							var clientWidth = docEl.clientWidth;
+		// 							if (!clientWidth) return;
+		// 							if(clientWidth>=640){
+		// 								docEl.style.fontSize = '100px';
+		// 							}else{
+		// 								docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+		// 							}
+		// 						};
+		
+		// 				if (!doc.addEventListener) return;
+		// 				win.addEventListener(resizeEvt, recalc, false);
+		// 				doc.addEventListener('DOMContentLoaded', recalc, false);
+		// 			})(document, window);
+		
+		
+				} else {
+		
+					//跳转pc端页面
+					
+					console.log("pc");
+					
+					(function (win) {
+						var tid;
+		
+						function refreshRem() {
+							let designSize = 1920; // 设计图尺寸
+							let html = document.documentElement;
+							let wW = html.clientWidth; // 窗口宽度
+							let rem = wW * 100 / designSize;
+							document.documentElement.style.fontSize = rem + 'px';
+						}
+						win.addEventListener('resize', function () {
+							clearTimeout(tid);
+							tid = setTimeout(refreshRem, 1);
+						}, false);
+						win.addEventListener('pageshow', function (e) {
+							if (e.persisted) {
+								clearTimeout(tid);
+								tid = setTimeout(refreshRem, 1);
+							}
+						}, false);
+						refreshRem();
+					})(window);
+					//console.log("pc端");
+				}
+			}
+			
+			
+			browserRedirect();
+			
+		</script>
+		<style>
+
+			*{font-family: SourceHanSansCN-Bold}
+
+
+			@keyframes fadeInUp {
+				from {
+					opacity: 0;
+					-webkit-transform: translate3d(0, 25%, 0);
+					transform: translate3d(0, 25%, 0);
+				}
+
+				to {
+					opacity: 1;
+					-webkit-transform: translate3d(0, 0, 0);
+					transform: translate3d(0, 0, 0);
+				}
+			}
+
+			.animate__fadeInUp {
+				-webkit-animation-name: fadeInUp;
+				animation-name: fadeInUp;
+			}
+
+			/* 呼吸 */
+			.animate__animated.animate__pulse {
+            -webkit-animation-duration: 1s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-duration: 1s;
+            -moz-animation-iteration-count: infinite;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+			}
+
+			/* 大小弹跳 */
+			.animate__animated.animate__heartBeat {
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-moz-animation-duration: 1s;
+				-moz-animation-iteration-count: infinite;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+			}
+
+
+
+			.animate__animated.animate__tada {
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-moz-animation-duration: 1s;
+				-moz-animation-iteration-count: infinite;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+			}
+
+			.animate__animated.animate__headShake {
+				-webkit-animation-duration: 1s;
+				-webkit-animation-iteration-count: infinite;
+				-moz-animation-duration: 1s;
+				-moz-animation-iteration-count: infinite;
+				animation-duration: 1s;
+				animation-iteration-count: infinite;
+			}
+			input::-webkit-input-placeholder {
+			color: #000000 !important;
+			font-size: 0.22rem !important;
+			font-weight: normal !important;
+			}
+
+		</style>
+		<style>
+
+			.part2_bottom_block_form_middle_button{
+				-webkit-animation-duration: 1s;
+				-webkit-animation-delay: 0;
+				-webkit-animation-iteration-count: infinite;
+				-moz-animation-duration: 1s;
+				-moz-animation-delay: 0;
+				-moz-animation-iteration-count: infinite;
+				animation-duration: 1s;
+				animation-delay: 0;
+				animation-iteration-count: infinite;
+			}
+
+
+		</style>
+
+	</head>
+	<body>
+		<div class="index_container" style="background: none;">
+
+			<div class="index_part1">
+				<div class="part1_center">
+					<div class="part1_left">
+						<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part1_left_image.png" alt="">
+					</div>
+					<div class="part1_middle">
+						<h3>
+							<span>20年工程机械生产基地</span>国际权威认证机构SGS认证
+						</h3>
+					</div>
+					<div class="part1_right">
+						<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part1_right_image.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div class="index_part2">
+				<div class="part2_center">
+					<!-- <div class="part2_top">
+						<div class="part2_top_font_one">
+							<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part2_top_font_one.png" alt="">
+						</div>
+						<div class="part2_top_font_two">
+							<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part2_top_font_two.png" alt="">
+						</div>
+						<div class="part2_top_font_three">
+							<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part2_top_font_three.png" alt="">
+						</div>
+					</div> -->
+				</div>
+			</div>
+
+
+
+
+
+    
+			
+
+
+
+
+
+			
+
+			<div class="index_part4" id="a1">
+				<div class="part4_center">
+					<div class="part4_top">
+						<div class="part4_top_block">
+							<div class="part4_top_block_h1">
+								<h1>
+									万元货款抵扣·中秋典藏礼盒·工厂现货直发
+								</h1>
+							</div>
+							<div class="part4_top_block_h3">
+								<h3>
+									活动时间：2025年9月4日--9月30日
+								</h3>
+							</div>
+						</div>
+					</div>
+					<div class="part4_middle">
+						<div class="part4_middle_block">
+							<div class="part4_middle_block_title">
+								<h1>
+									限时特价·工厂直发
+								</h1>
+							</div>
+							<div class="part4_middle_block_button_one">
+								<h3>
+									特价热销
+								</h3>
+							</div>
+							<div class="part4_middle_block_content_one">
+								<h3>
+									活动期间购买指定机型，
+								</h3>
+								<h4>
+									最高可享受<span>5000-10000元</span>直降优惠。
+								</h4>
+							</div>
+							<div class="part4_middle_block_button_two">
+								<h3>
+									延长保修
+								</h3>
+							</div>
+							<div class="part4_middle_block_content_two">
+								<h4>
+									活动期间购买指定机型，免费延长保修期<span>6个月</span>。
+								</h4>
+							</div>
+							<div class="part4_middle_block_button_three">
+								<h3>
+									指定设备详情
+								</h3>
+							</div>
+						</div>
+					</div>
+					<div class="part4_bottom">
+						<div class="part4_bottom_block">
+							<ul>
+								<li>
+									<div class="part4_bottom_block_li_h3">
+										<h3>
+											应急除雪滚
+										</h3>
+									</div>
+									<div class="part4_bottom_block_li_img part4_bottom_block_li_img_01">
+										<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_img_01.png" alt="">
+									</div>
+									<div class="part4_bottom_block_li_contact">
+										<div class="part4_bottom_block_li_contact_tel">
+											<div class="part4_bottom_block_li_contact_tel_piece">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_contact_tel_piece_icon.png" alt="">
+												<h3 class="animate__animated animate__headShake">
+													13837103643
+												</h3>
+											</div>
+										</div>
+										<div class="part4_bottom_block_li_contact_link">
+											<div class="part4_bottom_block_li_contact_link_piece">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake"> 
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="part4_bottom_block_li_h3">
+										<h3>
+											应急防汛泵
+										</h3>
+									</div>
+									<div class="part4_bottom_block_li_img part4_bottom_block_li_img_02">
+										<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_img_02.png" alt="">
+									</div>
+									<div class="part4_bottom_block_li_contact">
+										<div class="part4_bottom_block_li_contact_tel">
+											<div class="part4_bottom_block_li_contact_tel_piece">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_contact_tel_piece_icon.png" alt="">
+												<h3 class="animate__animated animate__headShake">
+													13837103643
+												</h3>
+											</div>
+										</div>
+										<div class="part4_bottom_block_li_contact_link">
+											<div class="part4_bottom_block_li_contact_link_piece">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake">
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="part4_bottom_block_li_h3">
+										<h3>
+											应急除雪铲
+										</h3>
+									</div>
+									<div class="part4_bottom_block_li_img part4_bottom_block_li_img_03">
+										<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_img_03.png" alt="">
+									</div>
+									<div class="part4_bottom_block_li_contact">
+										<div class="part4_bottom_block_li_contact_tel">
+											<div class="part4_bottom_block_li_contact_tel_piece">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_contact_tel_piece_icon.png" alt="">
+												<h3 class="animate__animated animate__headShake">
+													13837103643
+												</h3>
+											</div>
+										</div>
+										<div class="part4_bottom_block_li_contact_link">
+											<div class="part4_bottom_block_li_contact_link_piece">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake">
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="part4_bottom_block_li_h3">
+										<h3>
+											融雪撒布机
+										</h3>
+									</div>
+									<div class="part4_bottom_block_li_img part4_bottom_block_li_img_04">
+										<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_img_04.png" alt="">
+									</div>
+									<div class="part4_bottom_block_li_contact">
+										<div class="part4_bottom_block_li_contact_tel">
+											<div class="part4_bottom_block_li_contact_tel_piece">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_contact_tel_piece_icon.png" alt="">
+												<h3 class="animate__animated animate__headShake">
+													13837103643
+												</h3>
+											</div>
+										</div>
+										<div class="part4_bottom_block_li_contact_link">
+											<div class="part4_bottom_block_li_contact_link_piece">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake">
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="part4_bottom_block_li_h3">
+										<h3>
+											 泥浆分离机
+										</h3>
+									</div>
+									<div class="part4_bottom_block_li_img part4_bottom_block_li_img_05">
+										<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_img_05.png" alt="">
+									</div>
+									<div class="part4_bottom_block_li_contact">
+										<div class="part4_bottom_block_li_contact_tel">
+											<div class="part4_bottom_block_li_contact_tel_piece">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_contact_tel_piece_icon.png" alt="">
+												<h3 class="animate__animated animate__headShake">
+													13837103643
+												</h3>
+											</div>
+										</div>
+										<div class="part4_bottom_block_li_contact_link">
+											<div class="part4_bottom_block_li_contact_link_piece">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake">
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="part4_bottom_block_li_h3">
+										<h3>
+											双液注浆机
+										</h3>
+									</div>
+									<div class="part4_bottom_block_li_img part4_bottom_block_li_img_06">
+										<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_img_06.png" alt="">
+									</div>
+									<div class="part4_bottom_block_li_contact">
+										<div class="part4_bottom_block_li_contact_tel">
+											<div class="part4_bottom_block_li_contact_tel_piece">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part4_bottom_block_li_contact_tel_piece_icon.png" alt="">
+												<h3 class="animate__animated animate__headShake">
+													13837103643
+												</h3>
+											</div>
+										</div>
+										<div class="part4_bottom_block_li_contact_link">
+											<div class="part4_bottom_block_li_contact_link_piece">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake">
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			
+			<div class="index_part5" id="a2">
+				<div class="part5_center">
+					<div class="part5_top">
+						<div class="part5_top_h1">
+							<h1>
+								中秋好礼·购机即赠
+							</h1>
+						</div>
+					</div>
+					<div class="part5_bottom">
+						<ul>
+							<li>
+								<div class="part5_bottom_li">
+									<div class="part5_bottom_li_content">
+										<div class="part5_bottom_li_content_h3">
+											<h3>
+												商务典藏版礼盒（购机满20万元）
+											</h3>
+										</div>
+										<div class="part5_bottom_li_content_contact">
+											<div class="part5_bottom_li_content_contact_tel">
+												<h3 class="animate__animated animate__headShake">
+													 138-3710-3643
+												</h3>
+											</div>
+											<div class="part5_bottom_li_content_contact_link">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake">
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="part5_bottom_li_list">
+										<ul>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_01.png" alt="">
+													</div>
+													<div class="part5_bottom_li_list_li_h3">
+														<h3>
+															特级月饼
+														</h3>
+														<h3>
+															套装
+														</h3>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_02.png" alt="">
+													</div>
+													<div class="part5_bottom_li_list_li_h3">
+														<h3>
+															定制高端
+														</h3>
+														<h3>
+															茶具一套
+														</h3>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_03.png" alt="">
+													</div>
+													<div class="part5_bottom_li_list_li_h3">
+														<h3>
+															知名品牌
+														</h3>
+														<h3>
+															茶叶
+														</h3>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_04.png" alt="">
+													</div>
+													<div class="part5_bottom_li_list_li_h3">
+														<h3>
+															董事长亲笔
+														</h3>
+														<h3>
+															签名感谢信
+														</h3>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="part5_bottom_li">
+									<div class="part5_bottom_li_content">
+										<div class="part5_bottom_li_content_contact">
+											<div class="part5_bottom_li_content_contact_tel">
+												<h3 class="animate__animated animate__headShake">
+													 138-3710-3643
+												</h3>
+											</div>
+											<div class="part5_bottom_li_content_contact_link">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake">
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+										<div class="part5_bottom_li_content_h3">
+											<h3>
+												尊贵团圆版礼盒（购机满10万元）
+											</h3>
+										</div>
+									</div>
+									<div class="part5_bottom_li_list">
+										<ul>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_05.png" alt="">
+													</div>
+													<div class="part5_bottom_li_list_li_h3" style="width: 3.8rem;">
+														<h3>
+															特级月饼套装
+														</h3>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_06.png" alt="">
+													</div>
+													<div class="part5_bottom_li_list_li_h3" style="width: 3.8rem;">
+														<h3>
+															知名品牌茶叶	
+														</h3>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_07.png" alt="" style="position: relative;left: 0.7rem;top: 0.5rem;">
+													</div>
+													<div class="part5_bottom_li_list_li_h3" style="width: 3.8rem;">
+														<h3>
+															智能保温杯
+														</h3>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="part5_bottom_li">
+									<div class="part5_bottom_li_content">
+										<div class="part5_bottom_li_content_h3">
+											<h3>
+												标准感恩版礼盒(购机满5000元以上)
+											</h3>
+										</div>
+										<div class="part5_bottom_li_content_contact">
+											<div class="part5_bottom_li_content_contact_tel">
+												<h3 class="animate__animated animate__headShake">
+													 138-3710-3643
+												</h3>
+											</div>
+											<div class="part5_bottom_li_content_contact_link">
+												<a href="https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573" style="text-decoration: none;">
+													<h3 class="animate__animated animate__headShake">
+														线上咨询
+													</h3>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="part5_bottom_li_list">
+										<ul>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_08.png" alt="">
+													</div>
+													<div class="part5_bottom_li_list_li_h3" style="width: 3.8rem;">
+														<h3>
+															特级月饼套装
+														</h3>
+													</div>
+												</div>
+											</li>
+											<li>
+												<div class="part5_bottom_li_list_li">
+													<div class="part5_bottom_li_list_li_img">
+														<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part5_bottom_li_list_li_img_09.png" alt="">
+													</div>
+													<div class="part5_bottom_li_list_li_h3" style="width: 3.8rem;">
+														<h3 style="font-size: 0.3rem;">
+															豫工机械定制笔记本	
+														</h3>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+
+
+			
+
+
+
+			<div class="index_part7">
+				<div class="part7_center">
+					<div class="part7_top">
+						<div class="part7_top_block">
+							<h3>
+								老客户特惠·感恩回馈
+							</h3>
+						</div>
+					</div>
+					<div class="part7_middle">
+						<div class="part7_middle_block">
+							<h3>
+								老客户推荐新客户成功购机，双方均可获得：
+							</h3>
+						</div>
+					</div>
+					<div class="part7_bottom_list">
+						<div class="part7_bottom_list_block">
+							<ul>
+								<li>
+									<div class="part7_bottom_list_block_li_button">
+										<div class="part7_bottom_list_block_li_button_piece">
+											<h3>
+												老客户福利
+											</h3>
+										</div>
+									</div>
+									<div class="part7_bottom_list_block_li_content">
+										<div class="part7_bottom_list_block_li_content_left">
+											<div class="part7_bottom_list_block_li_content_left_img">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part7_bottom_list_block_li_content_left_img_01.png" alt="">
+											</div>
+											<div class="part7_bottom_list_block_li_content_left_h3">
+												<h3>
+													2000元维修代金券
+												</h3>
+											</div>
+										</div>
+										<div class="part7_bottom_list_block_li_content_plus">
+											<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part7_bottom_list_block_li_content_plus.png" alt="">
+										</div>
+										<div class="part7_bottom_list_block_li_content_right">
+											<div class="part7_bottom_list_block_li_content_right_img">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part7_bottom_list_block_li_content_right_img_02.png" alt="">
+											</div>
+											<div class="part7_bottom_list_block_li_content_right_h3">
+												<h3>
+													特别定制中秋礼盒
+												</h3>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="part7_bottom_list_block_li_button">
+										<div class="part7_bottom_list_block_li_button_piece">
+											<h3>
+												新客户特惠
+											</h3>
+										</div>
+									</div>
+									<div class="part7_bottom_list_block_li_content">
+										<div class="part7_bottom_list_block_li_content_left">
+											<div class="part7_bottom_list_block_li_content_left_img">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part7_bottom_list_block_li_content_left_img_03.png" alt="">
+											</div>
+											<div class="part7_bottom_list_block_li_content_left_h3">
+												<h3>
+													额外98折优惠
+												</h3>	
+											</div>
+										</div>
+										<div class="part7_bottom_list_block_li_content_plus">
+											<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part7_bottom_list_block_li_content_plus.png" alt="">
+										</div>
+										<div class="part7_bottom_list_block_li_content_right">
+											<div class="part7_bottom_list_block_li_content_right_img">
+												<img src="{THEME_PATH}assets/newdaguanwang/images/zhongqiuhuodong/part7_bottom_list_block_li_content_right_img_04.png" alt="">
+											</div>
+											<div class="part7_bottom_list_block_li_content_right_h3">
+												<h3>
+													标准中秋礼盒
+												</h3>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
+
+
+
+
+											
+
+
+
+
+
+
+
+
+			
+			
+
+
+
+					
+
+			
+		</div>
+
+
+
+
+
+
+
+	
+	
+		
+	</body>
+</html>
+
+
+<!--wow 初始化-->
+<script>
+
+	wow = new WOW({
+
+		animateClass: 'animated',
+
+	});
+
+	wow.init();
+
+</script>
+
+
+<script>
+	$(function () {
+		$(".btn").on("click", function () {
+			window.open(
+				"https://affim.baidu.com/unique_52605121/chat?siteId=20180242&userId=52605121&siteToken=1477cbe4beb08b8aee40baefeb131573",
+				"_blank"
+			);
+		});
+	});
+</script>
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?1477cbe4beb08b8aee40baefeb131573";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
