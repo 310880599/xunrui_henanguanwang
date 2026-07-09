@@ -1,4 +1,4 @@
-<?php namespace Phpcmf\Model\ContentSyncReceiver;
+<?php namespace Phpcmf\Model\Contentsyncreceiver;
 
 class ReceiveLog extends \Phpcmf\Model
 {

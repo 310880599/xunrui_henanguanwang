@@ -1,4 +1,3 @@
-DROP TABLE IF EXISTS `{dbprefix}content_sync_receive_log`;
 CREATE TABLE IF NOT EXISTS `{dbprefix}content_sync_receive_log` (
     `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
     `source_site` varchar(50) NOT NULL COMMENT '来源站点标识',

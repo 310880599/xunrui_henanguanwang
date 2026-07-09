@@ -1,6 +1,4 @@
-<?php namespace Phpcmf\Library\ContentSyncReceiver;
-
-use Phpcmf\Model\ContentSyncReceiver\ReceiveLog;
+<?php namespace Phpcmf\Library\Contentsyncreceiver;
 
 class ReceiveService extends \Phpcmf\Table
 {
@@ -47,7 +45,7 @@ class ReceiveService extends \Phpcmf\Table
             $sourceSite = 'zhengzhou';
         }
 
-        $logModel = new ReceiveLog();
+        $logModel = \Phpcmf\Service::M('ReceiveLog', APP_DIR);
         $exists = $logModel->get_by_source($sourceSite, $sourceContentId);
         if ($exists && (int)$exists['local_content_id'] > 0) {
             return [

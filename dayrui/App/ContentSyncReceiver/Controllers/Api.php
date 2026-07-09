@@ -1,8 +1,5 @@
 <?php namespace Phpcmf\Controllers;
 
-use Phpcmf\Library\ContentSyncReceiver\ReceiveService;
-use Phpcmf\Library\ContentSyncReceiver\Security;
-
 class Api extends \Phpcmf\App
 {
     protected function output_json($data) {
@@ -57,7 +54,7 @@ class Api extends \Phpcmf\App
 
     /**
      * 接收同步内容
-     * POST: /index.php?s=ContentSyncReceiver/Api/receive
+     * POST: /index.php?s=contentsyncreceiver&c=api&m=receive
      */
     public function receive() {
 
@@ -69,7 +66,7 @@ class Api extends \Phpcmf\App
         }
 
         $config = \Phpcmf\Service::M('app')->get_config(APP_DIR);
-        $security = new Security();
+        $security = \Phpcmf\Service::L('Security', APP_DIR);
         $requestKey = $security->get_request_api_key();
         if (!$security->is_valid_api_key($requestKey, (string)($config['api_key'] ?? ''))) {
             $this->output_json([
@@ -86,7 +83,7 @@ class Api extends \Phpcmf\App
             ]);
         }
 
-        $service = new ReceiveService();
+        $service = \Phpcmf\Service::L('ReceiveService', APP_DIR);
         $rt = $service->receive($payload, $config);
         if ((int)$rt['code']) {
             $this->output_json([

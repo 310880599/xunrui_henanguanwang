@@ -1,4 +1,4 @@
-<?php namespace Phpcmf\Library\ContentSyncReceiver;
+<?php namespace Phpcmf\Library\Contentsyncreceiver;
 
 class Security
 {
