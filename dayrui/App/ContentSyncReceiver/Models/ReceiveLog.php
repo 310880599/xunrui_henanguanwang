@@ -2,7 +2,7 @@
 
 class ReceiveLog extends \Phpcmf\Model
 {
-    protected $table = 'content_sync_receive_log';
+    public $table = 'content_sync_receive_log';
 
     public function get_by_source($sourceSite, $sourceContentId) {
         return \Phpcmf\Service::M()->table($this->table)
