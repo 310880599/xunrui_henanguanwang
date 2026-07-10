@@ -327,7 +327,7 @@ class ReceiveService extends \Phpcmf\Table
      * 重写 _Post 完成后的返回数据，输出本地内容id
      */
     protected function _Call_Post($data) {
-        $id = (int)($data['id'] ?? 0);
+        $id = (int)($data[1]['id'] ?? ($data[0]['id'] ?? 0));
         if (!$id) {
             return dr_return_data(0, 'save failed');
         }
