@@ -222,8 +222,8 @@ class ReceiveService extends \Phpcmf\Table
 
         $data = [
             'catid' => (int)$catid,
-            'uid' => (int)($member['id'] ?? 1),
-            'author' => (string)($member['name'] ?: ($member['username'] ?? 'admin')),
+            'uid' => (string)(($member['username'] ?? '') ?: 'admin'),
+            'author' => (string)(($member['name'] ?? '') ?: (($member['username'] ?? '') ?: 'admin')),
             'title' => trim((string)$payload['title']),
             'content' => (string)$payload['content'],
             'keywords' => trim((string)($payload['seo_keywords'] ?? '')),
