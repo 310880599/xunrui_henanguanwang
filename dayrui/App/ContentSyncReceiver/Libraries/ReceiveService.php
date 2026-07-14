@@ -12,7 +12,6 @@ class ReceiveService extends \Phpcmf\Table
      * 执行接收流程
      */
     public function receive($payload, $config) {
-
         $payload = is_array($payload) ? $payload : [];
         $config = is_array($config) ? $config : [];
 
@@ -219,17 +218,19 @@ class ReceiveService extends \Phpcmf\Table
     protected function build_post_data($payload, $catid, $member) {
         $inputtime = $this->format_time($payload['inputtime'] ?? '');
         $thumb = $this->format_thumb($payload['thumb'] ?? '', $member);
+        $content = html_entity_decode(
+            (string)$payload['content'],
+            ENT_QUOTES | ENT_HTML5,
+            'UTF-8'
+        );
+        $content = \Phpcmf\Service::L('ContentImageService', APP_DIR)->process($content, $member);
 
         $data = [
             'catid' => (int)$catid,
             'uid' => (string)(($member['username'] ?? '') ?: 'admin'),
             'author' => (string)(($member['name'] ?? '') ?: (($member['username'] ?? '') ?: 'admin')),
             'title' => trim((string)$payload['title']),
-            'content' => html_entity_decode(
-                (string)$payload['content'],
-                ENT_QUOTES | ENT_HTML5,
-                'UTF-8'
-            ),
+            'content' => $content,
             'keywords' => trim((string)($payload['seo_keywords'] ?? '')),
             'description' => trim((string)($payload['seo_description'] ?? '')),
             'inputtime' => $inputtime,
