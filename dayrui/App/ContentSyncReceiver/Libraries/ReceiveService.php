@@ -225,7 +225,11 @@ class ReceiveService extends \Phpcmf\Table
             'uid' => (string)(($member['username'] ?? '') ?: 'admin'),
             'author' => (string)(($member['name'] ?? '') ?: (($member['username'] ?? '') ?: 'admin')),
             'title' => trim((string)$payload['title']),
-            'content' => (string)$payload['content'],
+            'content' => html_entity_decode(
+                (string)$payload['content'],
+                ENT_QUOTES | ENT_HTML5,
+                'UTF-8'
+            ),
             'keywords' => trim((string)($payload['seo_keywords'] ?? '')),
             'description' => trim((string)($payload['seo_description'] ?? '')),
             'inputtime' => $inputtime,
