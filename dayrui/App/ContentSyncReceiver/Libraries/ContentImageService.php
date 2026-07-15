@@ -76,10 +76,14 @@ class ContentImageService
                         $cache[$src] = $this->download_and_save($src, $member, $downloadReason);
                         $cache['download_reason:'.$src] = $downloadReason;
                     }
-                    $newSrc = $cache[$src];
+                    $downloadResult = $cache[$src];
+                    $newSrc = $this->extract_download_url($downloadResult);
                     if (!$newSrc) {
                         if ($isNewUrl) {
                             $reason = (string)($cache['download_reason:'.$src] ?? '');
+                            if (!$reason) {
+                                $reason = $this->extract_download_reason($downloadResult);
+                            }
                             if (!$reason && $localCopyFailed) {
                                 $reason = (string)($cache['local_reason:'.$src] ?? 'copy local image failed');
                             }
@@ -227,42 +231,194 @@ class ContentImageService
     protected function download_and_save($url, $member, &$reason = '') {
         $reason = '';
         try {
+            // V1.2 MD5媒体资源去重
             $upload = \Phpcmf\Service::L('Upload')->down_file([
                 'url' => $url,
                 'timeout' => 8,
             ]);
             if (!$upload || empty($upload['code']) || empty($upload['data'])) {
                 $reason = 'download failed';
-                return '';
+                return $this->build_download_result(false, '', false, 0, '', $reason);
             }
 
-            if (!isset($upload['data']['remote'])) {
-                $upload['data']['remote'] = 0;
+            $uploadData = (array)$upload['data'];
+            $md5 = strtolower(trim((string)($uploadData['md5'] ?? '')));
+            $targetSite = $this->get_target_site();
+            $mediaService = null;
+            try {
+                $mediaService = \Phpcmf\Service::L('MediaService', APP_DIR);
+            } catch (\Throwable $e) {
+                $mediaService = null;
+            }
+
+            if ($mediaService && $targetSite && $md5) {
+                try {
+                    $media = $mediaService->getByMd5($targetSite, $md5);
+                    if ($media) {
+                        $available = $mediaService->checkAvailable($media);
+                        if (!empty($available['available']) && !empty($available['url'])) {
+                            try {
+                                $mediaService->touch($targetSite, $md5);
+                            } catch (\Throwable $e) {
+                                // touch 失败不影响正文同步
+                            }
+                            // V1.2.1 临时文件清理（仅清理本次 down_file 产生的文件）
+                            $this->cleanup_temp_download($uploadData);
+                            return $this->build_download_result(
+                                true,
+                                (string)$available['url'],
+                                true,
+                                (int)($available['attachment_id'] ?? ($media['attachment_id'] ?? 0)),
+                                $md5
+                            );
+                        }
+                    }
+                } catch (\Throwable $e) {
+                    // 媒体查询异常时降级走原有附件保存流程
+                }
+            }
+
+            if (!isset($uploadData['remote'])) {
+                $uploadData['remote'] = 0;
             }
 
             \Phpcmf\Service::M('Attachment')->member = $member;
-            $save = \Phpcmf\Service::M('Attachment')->save_data($upload['data']);
+            $save = \Phpcmf\Service::M('Attachment')->save_data($uploadData);
             if (!$save || (int)($save['code'] ?? 0) <= 0) {
                 $reason = 'save attachment failed';
-                return '';
+                return $this->build_download_result(false, '', false, 0, $md5, $reason);
             }
 
             $attachmentId = (int)$save['code'];
             if ($attachmentId <= 0) {
                 $reason = 'save attachment failed';
-                return '';
+                return $this->build_download_result(false, '', false, 0, $md5, $reason);
             }
 
+            $newUrl = '';
             if (function_exists('dr_get_file')) {
-                return (string)dr_get_file($attachmentId);
+                $newUrl = (string)dr_get_file($attachmentId);
+            }
+            if (!$newUrl) {
+                $reason = 'save attachment failed';
+                return $this->build_download_result(false, '', false, $attachmentId, $md5, $reason);
             }
 
-            $reason = 'save attachment failed';
-            return '';
+            if ($mediaService && $targetSite && $md5) {
+                try {
+                    $mediaService->save([
+                        'target_site' => $targetSite,
+                        'source_site' => $this->get_source_site($url),
+                        'md5' => $md5,
+                        'source_url' => (string)$url,
+                        'local_path' => (string)($uploadData['path'] ?? ($uploadData['file'] ?? '')),
+                        'attachment_id' => $attachmentId,
+                        'file_size' => (int)($uploadData['size'] ?? 0),
+                        'width' => $this->extract_image_dimension($uploadData['info'] ?? [], 0),
+                        'height' => $this->extract_image_dimension($uploadData['info'] ?? [], 1),
+                        'file_type' => (string)($uploadData['ext'] ?? ''),
+                    ]);
+                } catch (\Throwable $e) {
+                    // 媒体登记异常时不影响原有同步流程
+                }
+            }
+
+            return $this->build_download_result(true, $newUrl, false, $attachmentId, $md5);
         } catch (\Throwable $e) {
             $reason = (string)$e->getMessage();
+            return $this->build_download_result(false, '', false, 0, '', $reason);
+        }
+    }
+
+    protected function build_download_result($success, $url = '', $dedup = false, $attachmentId = 0, $md5 = '', $reason = '') {
+        if ($success) {
+            return [
+                'success' => true,
+                'url' => (string)$url,
+                'dedup' => (bool)$dedup,
+                'attachment_id' => (int)$attachmentId,
+                'md5' => strtolower(trim((string)$md5)),
+            ];
+        }
+
+        return [
+            'success' => false,
+            'reason' => (string)$reason,
+            'url' => '',
+            'dedup' => false,
+            'attachment_id' => 0,
+            'md5' => strtolower(trim((string)$md5)),
+        ];
+    }
+
+    protected function extract_download_url($result) {
+        if (is_array($result)) {
+            if (empty($result['success'])) {
+                return '';
+            }
+            return trim((string)($result['url'] ?? ''));
+        }
+
+        return trim((string)$result);
+    }
+
+    protected function extract_download_reason($result) {
+        if (!is_array($result)) {
             return '';
         }
+
+        return trim((string)($result['reason'] ?? ''));
+    }
+
+    // V1.2.1 临时文件清理
+    protected function cleanup_temp_download($uploadData) {
+        try {
+            $uploadData = (array)$uploadData;
+            $path = trim((string)($uploadData['path'] ?? ''));
+            if (!$path) {
+                return;
+            }
+
+            if (preg_match('/^\w+\:\/\//', $path)) {
+                return;
+            }
+
+            if (!(preg_match('/^[a-zA-Z]\:[\/\\\\]/', $path) || strpos($path, '/') === 0 || strpos($path, '\\') === 0)) {
+                $path = rtrim((string)ROOTPATH, '/\\').'/'.ltrim($path, '/\\');
+            }
+
+            if (is_file($path)) {
+                @unlink($path);
+            }
+        } catch (\Throwable $e) {
+            // 清理失败不影响新闻同步
+        }
+    }
+
+    protected function get_target_site() {
+        $targetSite = trim((string)parse_url((string)SITE_URL, PHP_URL_HOST));
+        if (!$targetSite) {
+            $targetSite = trim((string)SITE_URL);
+        }
+
+        return $targetSite;
+    }
+
+    protected function get_source_site($url) {
+        $sourceSite = trim((string)parse_url((string)$url, PHP_URL_HOST));
+        if ($sourceSite) {
+            return $sourceSite;
+        }
+
+        return trim((string)parse_url((string)$this->sourcePrefix, PHP_URL_HOST));
+    }
+
+    protected function extract_image_dimension($info, $index) {
+        if (!is_array($info) || !isset($info[$index])) {
+            return 0;
+        }
+
+        return max(0, (int)$info[$index]);
     }
 
     protected function replace_src($imgTag, $newSrc) {
