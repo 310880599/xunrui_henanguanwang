@@ -14,6 +14,7 @@ class ReceiveService extends \Phpcmf\Table
     public function receive($payload, $config) {
         $payload = is_array($payload) ? $payload : [];
         $config = is_array($config) ? $config : [];
+        $mediaStats = $this->default_media_stats();
 
         $sourceContentId = trim((string)($payload['content_id'] ?? ''));
         if (!$sourceContentId) {
@@ -85,7 +86,9 @@ class ReceiveService extends \Phpcmf\Table
             }
 
             $member = $this->get_post_member($config);
-            $postData = $this->build_post_data($payload, $targetCatId, $member);
+            $postResult = $this->build_post_data($payload, $targetCatId, $member);
+            $postData = (array)($postResult['data'] ?? []);
+            $mediaStats = $this->normalize_media_stats($postResult['media'] ?? []);
 
             $rt = $this->run_post($postData);
             if (!(int)$rt['code']) {
@@ -97,7 +100,7 @@ class ReceiveService extends \Phpcmf\Table
                 throw new \RuntimeException('local id is empty');
             }
 
-            $logModel->mark_success($logId, $localId, $title);
+            $logModel->mark_success($logId, $localId, $title, $mediaStats);
 
             return [
                 'code' => 1,
@@ -106,7 +109,7 @@ class ReceiveService extends \Phpcmf\Table
             ];
         } catch (\Throwable $e) {
             $message = $e->getMessage() ?: 'save content failed';
-            $logId && $logModel->mark_failed($logId, $message, $title);
+            $logId && $logModel->mark_failed($logId, $message, $title, $mediaStats);
             return [
                 'code' => 0,
                 'msg' => $message,
@@ -223,7 +226,9 @@ class ReceiveService extends \Phpcmf\Table
             ENT_QUOTES | ENT_HTML5,
             'UTF-8'
         );
-        $content = \Phpcmf\Service::L('ContentImageService', APP_DIR)->process($content, $member);
+        $mediaStats = $this->default_media_stats();
+        $content = \Phpcmf\Service::L('ContentImageService', APP_DIR)->process($content, $member, $mediaStats);
+        $mediaStats = $this->normalize_media_stats($mediaStats);
 
         $data = [
             'catid' => (int)$catid,
@@ -245,7 +250,35 @@ class ReceiveService extends \Phpcmf\Table
             $data['thumb'] = $thumb;
         }
 
-        return $data;
+        return [
+            'data' => $data,
+            'media' => $mediaStats,
+        ];
+    }
+
+    protected function default_media_stats() {
+        return [
+            'total' => 0,
+            'success' => 0,
+            'failed' => 0,
+            'error' => [],
+            'time' => 0,
+        ];
+    }
+
+    protected function normalize_media_stats($mediaStats) {
+        if (!is_array($mediaStats)) {
+            $mediaStats = [];
+        }
+
+        $mediaStats = array_merge($this->default_media_stats(), $mediaStats);
+        $mediaStats['total'] = max(0, (int)$mediaStats['total']);
+        $mediaStats['success'] = max(0, (int)$mediaStats['success']);
+        $mediaStats['failed'] = max(0, (int)$mediaStats['failed']);
+        $mediaStats['time'] = max(0, (float)$mediaStats['time']);
+        $mediaStats['error'] = is_array($mediaStats['error']) ? $mediaStats['error'] : [];
+
+        return $mediaStats;
     }
 
     protected function format_time($value) {

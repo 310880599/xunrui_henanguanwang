@@ -15,20 +15,24 @@ class ContentImageService
     /**
      * 正文图片本地化处理
      */
-    public function process($content, $member) {
+    public function process($content, $member, &$mediaStats = null) {
+        $startTime = microtime(true);
+        $this->init_media_stats($mediaStats);
         $content = (string)$content;
 
         if (!$content || stripos($content, '<img') === false) {
+            $mediaStats['time'] = $this->calculate_media_time($startTime);
             return $content;
         }
 
         try {
             $processedCount = 0;
             $cache = [];
+            $processedUrlStats = [];
 
             return preg_replace_callback(
                 '/<img\b[^>]*>/i',
-                function ($imgTag) use ($member, &$processedCount, &$cache) {
+                function ($imgTag) use ($member, &$processedCount, &$cache, &$processedUrlStats, &$mediaStats) {
                     $tag = $imgTag[0];
                     $src = $this->extract_src($tag);
                     if ($src === '') {
@@ -43,8 +47,13 @@ class ContentImageService
                         return $tag;
                     }
 
-                    $url = $src;
+                    $isNewUrl = !isset($processedUrlStats[$src]);
+                    if ($isNewUrl) {
+                        $processedUrlStats[$src] = true;
+                        $mediaStats['total']++;
+                    }
 
+                    $localCopyFailed = false;
                     if ($this->is_local_copy_url($src)) {
                         if (!isset($cache['local:'.$src])) {
                             $cache['local:'.$src] = $this->copy_local_image($src);
@@ -52,8 +61,12 @@ class ContentImageService
                         $localSrc = $cache['local:'.$src];
                         if ($localSrc) {
                             $processedCount++;
+                            if ($isNewUrl) {
+                                $mediaStats['success']++;
+                            }
                             return $this->replace_src($tag, $localSrc);
                         }
+                        $localCopyFailed = true;
                     }
 
                     if (!isset($cache[$src])) {
@@ -61,17 +74,58 @@ class ContentImageService
                     }
                     $newSrc = $cache[$src];
                     if (!$newSrc) {
+                        if ($isNewUrl) {
+                            $reason = $localCopyFailed
+                                ? 'copy_local_image and download_and_save failed'
+                                : 'download_and_save failed';
+                            $this->record_media_failed($mediaStats, $src, $reason);
+                        }
                         return $tag;
                     }
 
                     $processedCount++;
+                    if ($isNewUrl) {
+                        $mediaStats['success']++;
+                    }
                     return $this->replace_src($tag, $newSrc);
                 },
                 $content
             );
         } catch (\Throwable $e) {
+            if (is_array($mediaStats)) {
+                $this->record_media_failed($mediaStats, '', $e->getMessage());
+            }
             return $content;
+        } finally {
+            $mediaStats['time'] = $this->calculate_media_time($startTime);
         }
+    }
+
+    protected function init_media_stats(&$mediaStats) {
+        $mediaStats = [
+            'total' => 0,
+            'success' => 0,
+            'failed' => 0,
+            'error' => [],
+            'time' => 0,
+        ];
+    }
+
+    protected function record_media_failed(&$mediaStats, $url, $reason) {
+        $mediaStats['failed']++;
+        if (count($mediaStats['error']) < 10) {
+            $mediaStats['error'][] = [
+                'url' => (string)$url,
+                'reason' => (string)$reason,
+            ];
+        }
+    }
+
+    protected function calculate_media_time($startTime) {
+        return max(
+            0,
+            intval((microtime(true) - (float)$startTime) * 1000)
+        );
     }
 
     protected function extract_src($imgTag) {
