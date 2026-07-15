@@ -55,8 +55,10 @@ class ContentImageService
 
                     $localCopyFailed = false;
                     if ($this->is_local_copy_url($src)) {
+                        $localCopyReason = '';
                         if (!isset($cache['local:'.$src])) {
-                            $cache['local:'.$src] = $this->copy_local_image($src);
+                            $cache['local:'.$src] = $this->copy_local_image($src, $localCopyReason);
+                            $cache['local_reason:'.$src] = $localCopyReason;
                         }
                         $localSrc = $cache['local:'.$src];
                         if ($localSrc) {
@@ -69,15 +71,21 @@ class ContentImageService
                         $localCopyFailed = true;
                     }
 
+                    $downloadReason = '';
                     if (!isset($cache[$src])) {
-                        $cache[$src] = $this->download_and_save($src, $member);
+                        $cache[$src] = $this->download_and_save($src, $member, $downloadReason);
+                        $cache['download_reason:'.$src] = $downloadReason;
                     }
                     $newSrc = $cache[$src];
                     if (!$newSrc) {
                         if ($isNewUrl) {
-                            $reason = $localCopyFailed
-                                ? 'copy_local_image and download_and_save failed'
-                                : 'download_and_save failed';
+                            $reason = (string)($cache['download_reason:'.$src] ?? '');
+                            if (!$reason && $localCopyFailed) {
+                                $reason = (string)($cache['local_reason:'.$src] ?? 'copy local image failed');
+                            }
+                            if (!$reason) {
+                                $reason = 'download failed';
+                            }
                             $this->record_media_failed($mediaStats, $src, $reason);
                         }
                         return $tag;
@@ -122,10 +130,8 @@ class ContentImageService
     }
 
     protected function calculate_media_time($startTime) {
-        return max(
-            0,
-            intval((microtime(true) - (float)$startTime) * 1000)
-        );
+        $elapsed = intval((microtime(true) - (float)$startTime) * 1000);
+        return $elapsed <= 0 ? 1 : $elapsed;
     }
 
     protected function extract_src($imgTag) {
@@ -172,20 +178,24 @@ class ContentImageService
         return $host && $host === $this->localCopyHost;
     }
 
-    public function copy_local_image($url) {
+    public function copy_local_image($url, &$reason = '') {
+        $reason = '';
         $url = trim((string)$url);
 
         if (!$url) {
+            $reason = 'copy local image failed';
             return '';
         }
 
         $path = (string)parse_url($url, PHP_URL_PATH);
         if (!$path) {
+            $reason = 'copy local image failed';
             return '';
         }
 
         $relativePath = ltrim(str_replace('\\', '/', $path), '/');
         if ($relativePath === '' || strpos($relativePath, '..') !== false) {
+            $reason = 'copy local image failed';
             return '';
         }
 
@@ -195,15 +205,18 @@ class ContentImageService
         $targetFile = $targetRoot.'/'.$relativePath;
 
         if (!is_file($sourceFile)) {
+            $reason = 'copy local image failed';
             return '';
         }
 
         $targetDir = dirname($targetFile);
         if (!is_dir($targetDir) && !@mkdir($targetDir, 0777, true) && !is_dir($targetDir)) {
+            $reason = 'copy local image failed';
             return '';
         }
 
         if (!@copy($sourceFile, $targetFile)) {
+            $reason = 'copy local image failed';
             return '';
         }
 
@@ -211,13 +224,15 @@ class ContentImageService
         return $newSrc;
     }
 
-    protected function download_and_save($url, $member) {
+    protected function download_and_save($url, $member, &$reason = '') {
+        $reason = '';
         try {
             $upload = \Phpcmf\Service::L('Upload')->down_file([
                 'url' => $url,
                 'timeout' => 8,
             ]);
             if (!$upload || empty($upload['code']) || empty($upload['data'])) {
+                $reason = 'download failed';
                 return '';
             }
 
@@ -228,11 +243,13 @@ class ContentImageService
             \Phpcmf\Service::M('Attachment')->member = $member;
             $save = \Phpcmf\Service::M('Attachment')->save_data($upload['data']);
             if (!$save || (int)($save['code'] ?? 0) <= 0) {
+                $reason = 'save attachment failed';
                 return '';
             }
 
             $attachmentId = (int)$save['code'];
             if ($attachmentId <= 0) {
+                $reason = 'save attachment failed';
                 return '';
             }
 
@@ -240,8 +257,10 @@ class ContentImageService
                 return (string)dr_get_file($attachmentId);
             }
 
+            $reason = 'save attachment failed';
             return '';
         } catch (\Throwable $e) {
+            $reason = (string)$e->getMessage();
             return '';
         }
     }
