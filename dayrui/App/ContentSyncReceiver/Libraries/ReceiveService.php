@@ -220,7 +220,7 @@ class ReceiveService extends \Phpcmf\Table
 
     protected function build_post_data($payload, $catid, $member) {
         $inputtime = $this->format_time($payload['inputtime'] ?? '');
-        $thumb = $this->format_thumb($payload['thumb'] ?? '', $member);
+        $thumb = $this->format_thumb($payload, $member);
         $content = html_entity_decode(
             (string)$payload['content'],
             ENT_QUOTES | ENT_HTML5,
@@ -293,23 +293,19 @@ class ReceiveService extends \Phpcmf\Table
         return $time;
     }
 
-    protected function format_thumb($thumb, $member) {
-        $thumb = trim((string)$thumb);
-        if (!$thumb) {
+    protected function format_thumb($payload, $member) {
+        $resolved = $this->resolve_thumb_input($payload);
+        if (!$resolved['value']) {
             return 0;
         }
 
-        if (is_numeric($thumb)) {
-            return (int)$thumb;
-        }
-
-        if (!preg_match('/^\w+\:\/\//', $thumb)) {
-            return 0;
+        if ($resolved['source'] === 'local_thumb') {
+            return (int)$resolved['value'];
         }
 
         try {
             $upload = \Phpcmf\Service::L('Upload')->down_file([
-                'url' => $thumb,
+                'url' => $resolved['value'],
                 'timeout' => 8,
             ]);
             if (!$upload || empty($upload['code']) || empty($upload['data'])) {
@@ -330,6 +326,112 @@ class ReceiveService extends \Phpcmf\Table
         }
 
         return 0;
+    }
+
+    /**
+     * 解析缩略图输入来源：优先本地有效thumb，否则使用thumb_data.url
+     */
+    private function resolve_thumb_input($payload) {
+        $payload = is_array($payload) ? $payload : [];
+        $thumbRaw = trim((string)($payload['thumb'] ?? ''));
+        $thumbData = isset($payload['thumb_data']) && is_array($payload['thumb_data']) ? $payload['thumb_data'] : [];
+        $thumbDataUrl = trim((string)($thumbData['url'] ?? ''));
+
+        if ($thumbRaw !== '') {
+            $reason = '';
+            if ($this->is_valid_local_thumb($thumbRaw, $reason)) {
+                $this->log_thumb_decision($thumbRaw, 'local_thumb', 'valid');
+                return [
+                    'source' => 'local_thumb',
+                    'value' => (int)$thumbRaw,
+                ];
+            }
+
+            if ($thumbDataUrl && preg_match('/^\w+\:\/\//', $thumbDataUrl)) {
+                $this->log_thumb_decision($thumbRaw, 'thumb_data_url', $reason ?: 'invalid_thumb');
+                return [
+                    'source' => 'thumb_data_url',
+                    'value' => $thumbDataUrl,
+                ];
+            }
+
+            $this->log_thumb_decision($thumbRaw, 'none', $reason ?: 'invalid_thumb');
+            return [
+                'source' => 'none',
+                'value' => '',
+            ];
+        }
+
+        if ($thumbDataUrl && preg_match('/^\w+\:\/\//', $thumbDataUrl)) {
+            $this->log_thumb_decision($thumbRaw, 'thumb_data_url', 'thumb_empty');
+            return [
+                'source' => 'thumb_data_url',
+                'value' => $thumbDataUrl,
+            ];
+        }
+
+        $this->log_thumb_decision($thumbRaw, 'none', 'thumb_empty');
+        return [
+            'source' => 'none',
+            'value' => '',
+        ];
+    }
+
+    /**
+     * 判断是否为本站可用附件ID
+     */
+    private function is_valid_local_thumb($thumb, &$reason = '') {
+        $thumb = trim((string)$thumb);
+        if ($thumb === '' || !ctype_digit($thumb)) {
+            $reason = 'invalid_thumb';
+            return false;
+        }
+
+        $id = (int)$thumb;
+        if ($id < 1) {
+            $reason = 'invalid_thumb';
+            return false;
+        }
+
+        $index = \Phpcmf\Service::M()->table('attachment')->get($id);
+        if (!$index) {
+            $reason = 'attachment_not_exist';
+            return false;
+        }
+
+        $tableName = !empty($index['related']) ? 'attachment_data' : 'attachment_unused';
+        $info = \Phpcmf\Service::M()->table($tableName)->get($id);
+        if (!$info || empty($info['attachment'])) {
+            $reason = 'attachment_not_exist';
+            return false;
+        }
+
+        $basePath = SYS_UPLOAD_PATH;
+        if (!empty($info['remote'])) {
+            $attach = \Phpcmf\Service::M('Attachment')->get_attach_info((int)$info['remote']);
+            $remotePath = (string)($attach['value']['path'] ?? '');
+            if ($remotePath) {
+                $basePath = rtrim($remotePath, '/\\').DIRECTORY_SEPARATOR;
+            }
+        }
+
+        $file = $basePath.$info['attachment'];
+        if (!is_file($file)) {
+            $reason = 'file_not_exist';
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * 记录缩略图来源判断日志，便于排查
+     */
+    private function log_thumb_decision($thumbRaw, $source, $reason) {
+        log_message(
+            'debug',
+            '[ContentSyncReceiver] thumb_resolve raw='.$thumbRaw.' source='.$source.' reason='.$reason
+        );
     }
 
     protected function run_post($postData) {
